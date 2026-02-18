@@ -15,24 +15,25 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-navy-900/95 backdrop-blur-sm shadow-lg py-3'
-        : 'bg-transparent py-6'
-        }`}
+    <header 
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-navy-900/95 backdrop-blur-sm shadow-lg py-3' 
+          : 'bg-transparent py-6'
+      }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="relative w-14 h-14 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
-            <img src="/logo.png" alt="Geylani Rufai" className="relative w-full h-full object-contain" style={{ imageRendering: 'auto' }} />
-          </div>
+        <a href="#home" className="flex items-center gap-3 group">
+            <div className={`p-2 rounded-full border border-gold-500/30 transition-colors ${isScrolled ? 'bg-navy-900' : 'bg-white/10'}`}>
+                 <Moon className="w-6 h-6 text-gold-500 fill-gold-500" />
+            </div>
           <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-heading font-bold text-white tracking-wide group-hover:text-gold-400 transition-colors">
-              Geylani Rufai
+            <span className={`font-heading font-bold text-lg md:text-xl tracking-wider ${isScrolled || window.innerWidth < 768 ? 'text-white' : 'text-white'}`}>
+              GEYLANİ RUFAİ
             </span>
-            <span className="text-[10px] md:text-xs text-gold-500 tracking-[0.2em] font-serif uppercase hidden sm:block">
-              İlim ve Kültür Derneği
+            <span className="text-[0.65rem] tracking-[0.2em] text-gold-500 uppercase">
+              Tasavvuf ve Kültür Derneği
             </span>
           </div>
         </a>
@@ -49,7 +50,7 @@ const Header: React.FC = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
-          <a
+          <a 
             href="#donate"
             className="px-5 py-2 border border-gold-500 text-gold-500 rounded hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 font-bold text-sm uppercase"
           >
@@ -58,7 +59,7 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Toggle */}
-        <button
+        <button 
           className="lg:hidden text-white hover:text-gold-500 transition-colors"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -67,18 +68,19 @@ const Header: React.FC = () => {
       </div>
 
       {/* Mobile Nav Overlay */}
-      <div
-        className={`fixed inset-0 bg-navy-900/95 backdrop-blur-md z-40 lg:hidden transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
+      <div 
+        className={`fixed inset-0 bg-navy-900/95 backdrop-blur-md z-40 lg:hidden transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
         style={{ top: '0px' }}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
-          <button
-            className="absolute top-6 right-6 text-white hover:text-gold-500"
-            onClick={() => setIsOpen(false)}
-          >
-            <X size={32} />
-          </button>
+            <button 
+                className="absolute top-6 right-6 text-white hover:text-gold-500"
+                onClick={() => setIsOpen(false)}
+            >
+                <X size={32} />
+            </button>
           {NAV_ITEMS.map((item) => (
             <a
               key={item.label}
@@ -89,7 +91,7 @@ const Header: React.FC = () => {
               {item.label}
             </a>
           ))}
-          <a
+           <a 
             href="#donate"
             onClick={() => setIsOpen(false)}
             className="mt-4 px-8 py-3 border border-gold-500 text-gold-500 rounded hover:bg-gold-500 hover:text-navy-900 transition-all font-bold"

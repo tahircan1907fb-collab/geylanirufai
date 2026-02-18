@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,12 +9,26 @@ import Gallery from './components/Gallery';
 import Donation from './components/Donation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import SEO from './components/SEO';
 
-function App() {
+// Admin Imports
+import AdminLogin from './admin/AdminLogin';
+import AdminLayout from './admin/AdminLayout';
+import DashboardPage from './admin/DashboardPage';
+import ActivitiesPage from './admin/ActivitiesPage';
+import EventsPage from './admin/EventsPage';
+import GalleryPage from './admin/GalleryPage';
+import ProtectedRoute from './admin/components/ProtectedRoute';
+// Settings Sub-pages
+import HeroSettings from './admin/settings/HeroSettings';
+import AboutSettings from './admin/settings/AboutSettings';
+import DonationSettings from './admin/settings/DonationSettings';
+import ContactSettings from './admin/settings/ContactSettings';
+import SocialMediaSettings from './admin/settings/SocialMediaSettings';
+import MapSettings from './admin/settings/MapSettings';
+
+function MainSite() {
   return (
     <div className="font-sans antialiased text-gray-800 bg-cream-50">
-      <SEO />
       <Header />
       <main>
         <Hero />
@@ -39,6 +54,38 @@ function App() {
         </svg>
       </a>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Public Site */}
+        <Route path="/" element={<MainSite />} />
+
+        {/* Admin Login */}
+        <Route path="/admin" element={<AdminLogin />} />
+
+        {/* Protected Admin Routes */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="activities" element={<ActivitiesPage />} />
+            <Route path="events" element={<EventsPage />} />
+            <Route path="gallery" element={<GalleryPage />} />
+            <Route path="gallery" element={<GalleryPage />} />
+            {/* Settings Routes */}
+            <Route path="settings/hero" element={<HeroSettings />} />
+            <Route path="settings/about" element={<AboutSettings />} />
+            <Route path="settings/donation" element={<DonationSettings />} />
+            <Route path="settings/contact" element={<ContactSettings />} />
+            <Route path="settings/social" element={<SocialMediaSettings />} />
+            <Route path="settings/map" element={<MapSettings />} />
+          </Route>
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
