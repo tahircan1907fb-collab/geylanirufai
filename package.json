@@ -1,7 +1,10 @@
 {
   "name": "geylani-rufai-dernegi",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
+  "engines": {
+    "node": ">=18"
+  },
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite\" \"tsx server/index.ts\"",
