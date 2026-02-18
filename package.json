@@ -13,12 +13,15 @@
     "db:seed": "tsx server/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^7.4.0",
+    "@prisma/adapter-pg": "^6.19.2",
+    "@prisma/client": "^6.19.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/leaflet": "^1.9.21",
+    "@types/pg": "^8.16.0",
+    "@vercel/node": "^5.6.4",
     "bcryptjs": "^3.0.3",
     "concurrently": "^9.2.1",
     "cors": "^2.8.6",
@@ -27,7 +30,8 @@
     "jsonwebtoken": "^9.0.3",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.564.0",
-    "prisma": "^7.4.0",
+    "pg": "^8.18.0",
+    "prisma": "^6.19.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-leaflet": "^5.0.0",
@@ -35,13 +39,12 @@
     "tsx": "^4.21.0"
   },
   "devDependencies": {
-    "@prisma/adapter-better-sqlite3": "^7.4.0",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.24",
-    "better-sqlite3": "^12.6.2",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19",
+    "ts-node": "^10.9.2",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

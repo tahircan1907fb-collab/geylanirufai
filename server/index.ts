@@ -4,7 +4,6 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { PrismaClient } from '@prisma/client';
-import { PrismaBetterSQLite3 } from '@prisma/adapter-better-sqlite3';
 import authRoutes from './routes/auth';
 import activitiesRoutes from './routes/activities';
 import eventsRoutes from './routes/events';
@@ -15,9 +14,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Prisma 7: adapter-based connection
-const adapter = new PrismaBetterSQLite3({ url: process.env.DATABASE_URL ?? 'file:./dev.db' });
-const prisma = new PrismaClient({ adapter });
+const prisma = new PrismaClient();
 const PORT = 3001;
 
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
