@@ -36,7 +36,10 @@ const Contact: React.FC = () => {
 
     useEffect(() => {
         fetch('/api/settings')
-            .then((res) => res.json())
+            .then((res) => {
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                return res.json();
+            })
             .then((data) => setContact({
                 mapLat: Number(data.mapLat) || DEFAULT_LAT,
                 mapLng: Number(data.mapLng) || DEFAULT_LNG,
@@ -50,8 +53,11 @@ const Contact: React.FC = () => {
                 workingHoursSaturday: data.workingHoursSaturday || '10:00 - 15:00',
                 workingHoursSunday: data.workingHoursSunday || 'Kapalı',
             }))
-            .catch((err) => console.error('İletişim bilgileri yüklenemedi:', err));
+            .catch(() => {
+                // API unavailable – keep default state values
+            });
     }, []);
+
 
     const mapUrl = `https://maps.google.com/maps?q=${contact.mapLat},${contact.mapLng}&z=${contact.mapZoom}&output=embed`;
 

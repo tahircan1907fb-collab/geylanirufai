@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
+// Default hero content (used as fallback when API is unavailable)
+const DEFAULT_HERO: HeroData = {
+  heroBadge: 'Tasavvuf Geleneğinin İzinde',
+  heroTitle1: 'Geylani Rufai',
+  heroTitle2: 'İlim ve Kültür Derneği',
+  heroDescription:
+    'Seyyid Abdülkâdir Geylânî ve Seyyid Ahmed er-Rifâî efendilerimizin öğretilerini yaşam prensibi edinmek için kurulmuş bir kuruluştur.',
+  heroButtonText1: 'Faaliyetlerimiz',
+  heroButtonLink1: '#activities',
+  heroButtonText2: 'Bize Katılın',
+  heroButtonLink2: '#contact',
+  heroImage: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+};
+
 interface HeroData {
   heroBadge: string;
   heroTitle1: string;
@@ -14,23 +28,38 @@ interface HeroData {
 }
 
 const Hero: React.FC = () => {
-  const [data, setData] = useState<HeroData | null>(null);
+  const [data, setData] = useState<HeroData>(DEFAULT_HERO);
 
   useEffect(() => {
     fetch('/api/settings')
-      .then((res) => res.json())
-      .then((settings) => setData(settings))
-      .catch((err) => console.error('Failed to fetch hero settings:', err));
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((settings) =>
+        setData({
+          heroBadge: settings.heroBadge || DEFAULT_HERO.heroBadge,
+          heroTitle1: settings.heroTitle1 || DEFAULT_HERO.heroTitle1,
+          heroTitle2: settings.heroTitle2 || DEFAULT_HERO.heroTitle2,
+          heroDescription: settings.heroDescription || DEFAULT_HERO.heroDescription,
+          heroButtonText1: settings.heroButtonText1 || DEFAULT_HERO.heroButtonText1,
+          heroButtonLink1: settings.heroButtonLink1 || DEFAULT_HERO.heroButtonLink1,
+          heroButtonText2: settings.heroButtonText2 || DEFAULT_HERO.heroButtonText2,
+          heroButtonLink2: settings.heroButtonLink2 || DEFAULT_HERO.heroButtonLink2,
+          heroImage: settings.heroImage || DEFAULT_HERO.heroImage,
+        })
+      )
+      .catch(() => {
+        // API unavailable (e.g. Vercel static deploy) – keep defaults
+      });
   }, []);
-
-  if (!data) return null; // or a skeleton loader
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={data.heroImage || "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"}
+          src={data.heroImage}
           alt="Manevi Atmosfer"
           className="w-full h-full object-cover"
         />
@@ -42,31 +71,31 @@ const Hero: React.FC = () => {
         <div className="animate-fade-in-up">
           <div className="mb-6 flex justify-center">
             <span className="px-4 py-1 border border-gold-500/50 rounded-full text-gold-400 text-xs md:text-sm tracking-[0.2em] uppercase bg-black/20 backdrop-blur-sm">
-              {data.heroBadge || "Tasavvuf Geleneğinin İzinde"}
+              {data.heroBadge}
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
-            <span className="block text-gold-500">{data.heroTitle1 || "Geylani Rufai"}</span>
-            <span className="block">{data.heroTitle2 || "İlim, İrfan ve Hizmet Yolu"}</span>
+            <span className="block text-gold-500">{data.heroTitle1}</span>
+            <span className="block">{data.heroTitle2}</span>
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg md:text-xl font-serif text-gray-200 mb-10 leading-relaxed">
-            {data.heroDescription || "Tasavvuf geleneğini yaşatmak, gönülleri ilahi aşkla buluşturmak ve gelecek nesillere bu manevi mirası aktarmak amacıyla hizmet ediyoruz."}
+            {data.heroDescription}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href={data.heroButtonLink1 || "#activities"}
+              href={data.heroButtonLink1}
               className="px-8 py-4 bg-gold-500 text-navy-900 rounded font-bold hover:bg-gold-400 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-gold-500/20"
             >
-              {data.heroButtonText1 || "Faaliyetlerimiz"} <ArrowRight size={20} />
+              {data.heroButtonText1} <ArrowRight size={20} />
             </a>
             <a
-              href={data.heroButtonLink2 || "#contact"}
+              href={data.heroButtonLink2}
               className="px-8 py-4 bg-transparent border border-white text-white rounded font-bold hover:bg-white/10 transition-all duration-300"
             >
-              {data.heroButtonText2 || "Bize Katılın"}
+              {data.heroButtonText2}
             </a>
           </div>
         </div>
