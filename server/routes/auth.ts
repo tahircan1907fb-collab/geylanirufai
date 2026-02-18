@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { prisma } from '../index';
+import { supabase } from '../index';
 import { JWT_SECRET } from '../middleware/auth';
 
 const router = Router();
@@ -15,8 +15,13 @@ router.post('/login', async (req: Request, res: Response): Promise<void> => {
           return;
      }
 
-     const admin = await prisma.admin.findUnique({ where: { username } });
-     if (!admin) {
+     const { data: admin, error } = await supabase
+          .from('Admin')
+          .select('*')
+          .eq('username', username)
+          .single();
+
+     if (error || !admin) {
           res.status(401).json({ error: 'Geçersiz kullanıcı adı veya şifre' });
           return;
      }

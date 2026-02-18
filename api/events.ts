@@ -1,8 +1,12 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { PrismaClient } from '@prisma/client';
+import { createClient } from '@supabase/supabase-js';
 import jwt from 'jsonwebtoken';
 
-const prisma = new PrismaClient();
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  { auth: { persistSession: false, autoRefreshToken: false } }
+);
 
 function authMiddleware(req: VercelRequest): boolean {
   const auth = req.headers.authorization;
@@ -20,8 +24,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { method } = req;
 
   if (method === 'GET') {
-    const items = await prisma.event.findMany({ orderBy: { id: 'desc' } });
-    return res.json(items);
+    const { data, error } = await supabase
+      .from('Event')
+      .select('*')
+      .order('id', { ascending: false });
+    if (error) return res.status(500).json({ error: error.message });
+    return res.json(data);
   }
 
   if (!authMiddleware(req)) {
@@ -30,31 +38,33 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (method === 'POST') {
     const { title, date, time, location, category } = req.body;
-    const item = await prisma.event.create({ 
-      data: { title, date, time, location, category } 
-    });
-    return res.status(201).json(item);
+    const { data, error } = await supabase
+      .from('Event')
+      .insert({ title, date, time, location, category })
+      .select()
+      .single();
+    if (error) return res.status(500).json({ error: error.message });
+    return res.status(201).json(data);
   }
 
   if (method === 'PUT') {
     const id = parseInt(req.query.id as string);
     const { title, date, time, location, category } = req.body;
-    try {
-      const item = await prisma.event.update({ where: { id }, data: { title, date, time, location, category } });
-      return res.json(item);
-    } catch {
-      return res.status(404).json({ error: 'Kayıt bulunamadı' });
-    }
+    const { data, error } = await supabase
+      .from('Event')
+      .update({ title, date, time, location, category })
+      .eq('id', id)
+      .select()
+      .single();
+    if (error) return res.status(404).json({ error: 'Kayıt bulunamadı' });
+    return res.json(data);
   }
 
   if (method === 'DELETE') {
     const id = parseInt(req.query.id as string);
-    try {
-      await prisma.event.delete({ where: { id } });
-      return res.json({ success: true });
-    } catch {
-      return res.status(404).json({ error: 'Kayıt bulunamadı' });
-    }
+    const { error } = await supabase.from('Event').delete().eq('id', id);
+    if (error) return res.status(404).json({ error: 'Kayıt bulunamadı' });
+    return res.json({ success: true });
   }
 
   return res.status(405).json({ error: 'Method not allowed' });

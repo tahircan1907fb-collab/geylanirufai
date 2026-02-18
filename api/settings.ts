@@ -1,8 +1,12 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { PrismaClient } from '@prisma/client';
+import { createClient } from '@supabase/supabase-js';
 import jwt from 'jsonwebtoken';
 
-const prisma = new PrismaClient();
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  { auth: { persistSession: false, autoRefreshToken: false } }
+);
 
 function authMiddleware(req: VercelRequest): boolean {
   const auth = req.headers.authorization;
@@ -21,11 +25,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (method === 'GET') {
     try {
-      let settings = await prisma.siteSettings.findUnique({ where: { id: 1 } });
-      if (!settings) {
-        settings = await prisma.siteSettings.create({ data: { id: 1 } });
+      const { data, error } = await supabase
+        .from('SiteSettings')
+        .select('*')
+        .eq('id', 1)
+        .single();
+
+      if (error && error.code === 'PGRST116') {
+        const { data: created, error: createErr } = await supabase
+          .from('SiteSettings')
+          .insert({ id: 1 })
+          .select()
+          .single();
+        if (createErr) throw createErr;
+        return res.json(created);
       }
-      return res.json(settings);
+      if (error) throw error;
+      return res.json(data);
     } catch (error) {
       console.error('Settings fetch error:', error);
       return res.status(500).json({ error: 'Failed to fetch settings', details: String(error) });
@@ -38,13 +54,33 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (method === 'PUT') {
     try {
-      const { id, ...data } = req.body;
-      const settings = await prisma.siteSettings.upsert({
-        where: { id: 1 },
-        update: data,
-        create: { id: 1, ...data },
-      });
-      return res.json(settings);
+      const { id, ...updateData } = req.body;
+      const { data: existing } = await supabase
+        .from('SiteSettings')
+        .select('id')
+        .eq('id', 1)
+        .single();
+
+      let result;
+      if (existing) {
+        const { data, error } = await supabase
+          .from('SiteSettings')
+          .update(updateData)
+          .eq('id', 1)
+          .select()
+          .single();
+        if (error) throw error;
+        result = data;
+      } else {
+        const { data, error } = await supabase
+          .from('SiteSettings')
+          .insert({ id: 1, ...updateData })
+          .select()
+          .single();
+        if (error) throw error;
+        result = data;
+      }
+      return res.json(result);
     } catch (error) {
       console.error('Settings update error:', error);
       return res.status(500).json({ error: 'Failed to update settings', details: String(error) });

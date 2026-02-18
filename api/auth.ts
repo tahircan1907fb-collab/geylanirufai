@@ -1,18 +1,26 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { PrismaClient } from '@prisma/client';
+import { createClient } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-const prisma = new PrismaClient();
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  { auth: { persistSession: false, autoRefreshToken: false } }
+);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { method } = req;
 
   if (method === 'POST') {
     const { username, password } = req.body;
-    const user = await prisma.admin.findUnique({ where: { username } });
-    
-    if (!user || !(await bcrypt.compare(password, user.password))) {
+    const { data: user, error } = await supabase
+      .from('Admin')
+      .select('*')
+      .eq('username', username)
+      .single();
+
+    if (error || !user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ error: 'Geçersiz kullanıcı adı veya şifre' });
     }
 
