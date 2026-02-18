@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
      title?: string;
@@ -13,12 +12,12 @@ const SEO: React.FC<SEOProps> = ({
      title = 'Geylani Rufai - İlim, İrfan ve Hizmet Yolu',
      description = 'Tasavvuf geleneğini yaşatmak, gönülleri ilahi aşkla buluşturmak ve gelecek nesillere bu manevi mirası aktarmak amacıyla hizmet ediyoruz.',
      keywords = 'geylani, rufai, tasavvuf, dernek, islami ilimler, maneviyat, zikir, sohbet',
-     image = '/logo.png', // Varsayılan görsel
-     url = 'https://geylanirufai.org' // Varsayılan URL
+     image = '/logo.png',
+     url = 'https://geylanirufai.org'
 }) => {
      return (
-          <Helmet>
-               {/* Standart Meta Etiketleri */}
+          <>
+               {/* React 19 native head element support */}
                <title>{title}</title>
                <meta name="description" content={description} />
                <meta name="keywords" content={keywords} />
@@ -37,7 +36,7 @@ const SEO: React.FC<SEOProps> = ({
                <meta property="twitter:title" content={title} />
                <meta property="twitter:description" content={description} />
                <meta property="twitter:image" content={image} />
-          </Helmet>
+          </>
      );
 };
 
