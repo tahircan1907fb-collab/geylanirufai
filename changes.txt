@@ -1,0 +1,4 @@
+ M .agent/skills/external/awesome-claude-skills
+ M .agent/skills/external/claude-code
+ M .agent/skills/external/superpowers
+?? changes.txt
