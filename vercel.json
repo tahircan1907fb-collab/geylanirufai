@@ -2,13 +2,18 @@
   "buildCommand": "prisma generate && vite build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "functions": {
+    "api/*.ts": {
+      "runtime": "vercel-node@latest"
+    }
+  },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     },
     {
-      "source": "/((?!assets|api).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
