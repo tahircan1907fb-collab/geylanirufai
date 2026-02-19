@@ -46,19 +46,45 @@ export default function EventsPage() {
 
      async function handleSave(e: React.FormEvent) {
           e.preventDefault();
-          if (editing) {
-               await fetch(`/api/events/${editing.id}`, { method: 'PUT', headers, body: JSON.stringify(form) });
-          } else {
-               await fetch('/api/events', { method: 'POST', headers, body: JSON.stringify(form) });
+          try {
+               let res;
+               if (editing) {
+                    // Update: PUT /api/events?id=123 (Vercel dynamic route)
+                    // Note: In local dev with `vercel dev`, it handles path segments too, but query param is safer if rewrites arent perfect.
+                    // Let's stick to standard path `/api/events/${id}` assuming vercel.json rewrites are set (they are).
+                    res = await fetch(`/api/events?id=${editing.id}`, { method: 'PUT', headers, body: JSON.stringify(form) });
+               } else {
+                    // Create: POST /api/events
+                    res = await fetch('/api/events', { method: 'POST', headers, body: JSON.stringify(form) });
+               }
+
+               if (!res.ok) {
+                    const data = await res.json();
+                    throw new Error(data.error || 'Kaydetme işlemi başarısız');
+               }
+
+               setModalOpen(false);
+               fetchAll();
+          } catch (error) {
+               console.error('Save error:', error);
+               alert('Kaydetme işlemi sırasında bir hata oluştu: ' + String(error));
           }
-          setModalOpen(false);
-          fetchAll();
      }
 
      async function handleDelete(id: number) {
           if (!confirm('Bu etkinliği silmek istediğinize emin misiniz?')) return;
-          await fetch(`/api/events/${id}`, { method: 'DELETE', headers });
-          fetchAll();
+
+          try {
+               const res = await fetch(`/api/events?id=${id}`, { method: 'DELETE', headers });
+               if (!res.ok) {
+                    const data = await res.json();
+                    throw new Error(data.error || 'Silme işlemi başarısız');
+               }
+               fetchAll();
+          } catch (error) {
+               console.error('Delete error:', error);
+               alert('Silme işlemi sırasında bir hata oluştu: ' + String(error));
+          }
      }
 
      const categoryColor = (cat: string) => {
