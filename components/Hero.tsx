@@ -49,8 +49,9 @@ const Hero: React.FC = () => {
           heroImage: settings.heroImage || DEFAULT_HERO.heroImage,
         })
       )
-      .catch(() => {
-        // API unavailable (e.g. Vercel static deploy) – keep defaults
+      .catch((error) => {
+        console.error('Hero settings fetch error:', error);
+        // Fallback to defaults is already handled by initial state
       });
   }, []);
 

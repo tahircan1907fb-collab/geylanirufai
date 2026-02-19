@@ -2,6 +2,25 @@ import React from 'react';
 import { ArrowUp } from 'lucide-react';
 
 const Footer: React.FC = () => {
+    const [contact, setContact] = React.useState({
+        address: 'Molla Gürani Mah. Fatih/İst.',
+        phone: '+90 212 555 12 34',
+        email: 'bilgi@geylanirufai.org.tr'
+    });
+
+    React.useEffect(() => {
+        fetch('/api/settings')
+            .then(res => res.json())
+            .then(data => {
+                setContact({
+                    address: data.address || 'Molla Gürani Mah. Fatih/İst.',
+                    phone: data.phone || '+90 212 555 12 34',
+                    email: data.email || 'bilgi@geylanirufai.org.tr'
+                });
+            })
+            .catch(err => console.error('Footer contact fetch error:', err));
+    }, []);
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -42,9 +61,9 @@ const Footer: React.FC = () => {
                     {/* Column 3: Contact */}
                     <div>
                         <h3 className="text-lg font-bold mb-4 border-b border-gray-700 pb-2 inline-block">İletişim</h3>
-                        <p className="text-gray-400 text-sm mb-2">Molla Gürani Mah. Fatih/İst.</p>
-                        <p className="text-gray-400 text-sm mb-2">+90 212 555 12 34</p>
-                        <p className="text-gray-400 text-sm">bilgi@geylanirufai.org.tr</p>
+                        <p className="text-gray-400 text-sm mb-2 whitespace-pre-line">{contact.address}</p>
+                        <p className="text-gray-400 text-sm mb-2">{contact.phone}</p>
+                        <p className="text-gray-400 text-sm">{contact.email}</p>
                     </div>
 
                     {/* Column 4: Newsletter (Mock) */}

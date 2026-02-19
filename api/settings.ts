@@ -83,7 +83,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.json(result);
     } catch (error) {
       console.error('Settings update error:', error);
-      return res.status(500).json({ error: 'Failed to update settings', details: String(error) });
+      console.error('Settings update error:', error);
+      return res.status(500).json({
+        error: 'Failed to update settings',
+        details: error instanceof Error ? error.message : String(error),
+        fullError: JSON.stringify(error)
+      });
     }
   }
 
