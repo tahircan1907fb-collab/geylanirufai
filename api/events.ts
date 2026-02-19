@@ -28,44 +28,38 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .from('Event')
       .select('*')
       .order('id', { ascending: false });
+
     if (error) return res.status(500).json({ error: error.message });
-    return res.json(data);
+    return res.status(200).json(data);
   }
 
+  // Admin authentication check for POST, PUT, DELETE
   if (!authMiddleware(req)) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
   if (method === 'POST') {
     const { title, date, time, location, category } = req.body;
+
+    // Validate required fields
+    if (!title || !date || !time || !location || !category) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
     const { data, error } = await supabase
       .from('Event')
       .insert({ title, date, time, location, category })
       .select()
       .single();
+
     if (error) return res.status(500).json({ error: error.message });
     return res.status(201).json(data);
   }
 
-  if (method === 'PUT') {
-    const id = parseInt(req.query.id as string);
-    const { title, date, time, location, category } = req.body;
-    const { data, error } = await supabase
-      .from('Event')
-      .update({ title, date, time, location, category })
-      .eq('id', id)
-      .select()
-      .single();
-    if (error) return res.status(404).json({ error: 'Kayıt bulunamadı' });
-    return res.json(data);
-  }
-
-  if (method === 'DELETE') {
-    const id = parseInt(req.query.id as string);
-    const { error } = await supabase.from('Event').delete().eq('id', id);
-    if (error) return res.status(404).json({ error: 'Kayıt bulunamadı' });
-    return res.json({ success: true });
-  }
+  // For PUT and DELETE, we need the ID, which is handled in a separate dynamic route file or parsed from query if using query params.
+  // However, Vercel file-based routing encourages separating by file structure.
+  // Since we are inside api/events.ts, we handle collection operations.
+  // Individual item operations should be in api/events/[id].ts
 
   return res.status(405).json({ error: 'Method not allowed' });
 }
