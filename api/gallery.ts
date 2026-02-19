@@ -21,48 +21,53 @@ function authMiddleware(req: VercelRequest): boolean {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const { method } = req;
+  try {
+    const { method } = req;
 
-  if (method === 'GET') {
-    const { data, error } = await supabase.from('GalleryImage').select('*');
-    if (error) return res.status(500).json({ error: error.message });
-    return res.json(data);
+    if (method === 'GET') {
+      const { data, error } = await supabase.from('GalleryImage').select('*');
+      if (error) return res.status(500).json({ error: error.message });
+      return res.json(data ?? []);
+    }
+
+    if (!authMiddleware(req)) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    if (method === 'POST') {
+      const { src, alt, category } = req.body;
+      const { data, error } = await supabase
+        .from('GalleryImage')
+        .insert({ src, alt, category })
+        .select()
+        .single();
+      if (error) return res.status(500).json({ error: error.message });
+      return res.status(201).json(data);
+    }
+
+    if (method === 'PUT') {
+      const id = parseInt(req.query.id as string);
+      const { src, alt, category } = req.body;
+      const { data, error } = await supabase
+        .from('GalleryImage')
+        .update({ src, alt, category })
+        .eq('id', id)
+        .select()
+        .single();
+      if (error) return res.status(404).json({ error: 'Kayıt bulunamadı' });
+      return res.json(data);
+    }
+
+    if (method === 'DELETE') {
+      const id = parseInt(req.query.id as string);
+      const { error } = await supabase.from('GalleryImage').delete().eq('id', id);
+      if (error) return res.status(404).json({ error: 'Kayıt bulunamadı' });
+      return res.json({ success: true });
+    }
+
+    return res.status(405).json({ error: 'Method not allowed' });
+  } catch (err) {
+    console.error('Gallery API error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
   }
-
-  if (!authMiddleware(req)) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-
-  if (method === 'POST') {
-    const { src, alt, category } = req.body;
-    const { data, error } = await supabase
-      .from('GalleryImage')
-      .insert({ src, alt, category })
-      .select()
-      .single();
-    if (error) return res.status(500).json({ error: error.message });
-    return res.status(201).json(data);
-  }
-
-  if (method === 'PUT') {
-    const id = parseInt(req.query.id as string);
-    const { src, alt, category } = req.body;
-    const { data, error } = await supabase
-      .from('GalleryImage')
-      .update({ src, alt, category })
-      .eq('id', id)
-      .select()
-      .single();
-    if (error) return res.status(404).json({ error: 'Kayıt bulunamadı' });
-    return res.json(data);
-  }
-
-  if (method === 'DELETE') {
-    const id = parseInt(req.query.id as string);
-    const { error } = await supabase.from('GalleryImage').delete().eq('id', id);
-    if (error) return res.status(404).json({ error: 'Kayıt bulunamadı' });
-    return res.json({ success: true });
-  }
-
-  return res.status(405).json({ error: 'Method not allowed' });
 }

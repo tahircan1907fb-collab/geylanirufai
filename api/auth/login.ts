@@ -13,26 +13,31 @@ const supabase = createClient(
 );
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-     if (req.method !== 'POST') {
-          return res.status(405).json({ error: 'Method not allowed' });
+     try {
+          if (req.method !== 'POST') {
+               return res.status(405).json({ error: 'Method not allowed' });
+          }
+
+          const { username, password } = req.body;
+
+          if (!username || !password) {
+               return res.status(400).json({ error: 'Kullanıcı adı ve şifre gereklidir' });
+          }
+
+          const { data: user, error } = await supabase
+               .from('Admin')
+               .select('*')
+               .eq('username', username)
+               .single();
+
+          if (error || !user || !(await bcrypt.compare(password, user.password))) {
+               return res.status(401).json({ error: 'Geçersiz kullanıcı adı veya şifre' });
+          }
+
+          const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: TOKEN_EXPIRY });
+          return res.json({ token, username: user.username });
+     } catch (err) {
+          console.error('Auth login API error:', err);
+          return res.status(500).json({ error: 'Internal server error' });
      }
-
-     const { username, password } = req.body;
-
-     if (!username || !password) {
-          return res.status(400).json({ error: 'Kullanıcı adı ve şifre gereklidir' });
-     }
-
-     const { data: user, error } = await supabase
-          .from('Admin')
-          .select('*')
-          .eq('username', username)
-          .single();
-
-     if (error || !user || !(await bcrypt.compare(password, user.password))) {
-          return res.status(401).json({ error: 'Geçersiz kullanıcı adı veya şifre' });
-     }
-
-     const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: TOKEN_EXPIRY });
-     return res.json({ token, username: user.username });
 }

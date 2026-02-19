@@ -27,7 +27,11 @@ export default function DashboardPage() {
                          fetch('/api/events', { headers }),
                          fetch('/api/gallery', { headers }),
                     ]);
-                    const [acts, evts, gals] = await Promise.all([actRes.json(), evtRes.json(), galRes.json()]);
+                    const safeJson = async (r: Response) => {
+                         if (!r.ok) return [];
+                         try { return await r.json(); } catch { return []; }
+                    };
+                    const [acts, evts, gals] = await Promise.all([safeJson(actRes), safeJson(evtRes), safeJson(galRes)]);
                     setStats({
                          activities: Array.isArray(acts) ? acts.length : 0,
                          events: Array.isArray(evts) ? evts.length : 0,

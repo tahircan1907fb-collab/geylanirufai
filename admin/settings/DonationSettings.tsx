@@ -19,7 +19,10 @@ export default function DonationSettings() {
 
      useEffect(() => {
           fetch('/api/settings', { headers: authHeaders() })
-               .then((r) => r.json())
+               .then((r) => {
+                    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                    return r.json();
+               })
                .then((data) => {
                     const { id, ...rest } = data;
                     const filtered: any = {};
@@ -27,8 +30,9 @@ export default function DonationSettings() {
                          if (rest[key] !== undefined) filtered[key] = rest[key];
                     });
                     setForm({ ...EMPTY, ...filtered });
-                    setLoading(false);
-               });
+               })
+               .catch((err) => console.error('DonationSettings fetch error:', err))
+               .finally(() => setLoading(false));
      }, []);
 
      async function handleSave(e: React.FormEvent) {

@@ -31,12 +31,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Error handler
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error('Server error:', err);
-  res.status(500).json({ error: err.message });
-});
-
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/activities', activitiesRoutes);
@@ -47,6 +41,17 @@ app.use('/api/settings', settingsRoutes);
 // Health check
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok' });
+});
+
+// 404 handler for API routes — always return JSON, never HTML
+app.use('/api', (_req, res) => {
+  res.status(404).json({ error: 'Endpoint bulunamadı' });
+});
+
+// Global error handler — MUST be AFTER routes
+app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  console.error('Server error:', err);
+  res.status(500).json({ error: err.message || 'Internal Server Error' });
 });
 
 app.listen(PORT, () => {

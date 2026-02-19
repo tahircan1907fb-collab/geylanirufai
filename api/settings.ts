@@ -21,10 +21,10 @@ function authMiddleware(req: VercelRequest): boolean {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const { method } = req;
+  try {
+    const { method } = req;
 
-  if (method === 'GET') {
-    try {
+    if (method === 'GET') {
       const { data, error } = await supabase
         .from('SiteSettings')
         .select('*')
@@ -42,18 +42,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
       if (error) throw error;
       return res.json(data);
-    } catch (error) {
-      console.error('Settings fetch error:', error);
-      return res.status(500).json({ error: 'Failed to fetch settings', details: String(error) });
     }
-  }
 
-  if (!authMiddleware(req)) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
+    if (!authMiddleware(req)) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
 
-  if (method === 'PUT') {
-    try {
+    if (method === 'PUT') {
       const { id, ...updateData } = req.body;
       const { data: existing } = await supabase
         .from('SiteSettings')
@@ -81,16 +76,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         result = data;
       }
       return res.json(result);
-    } catch (error) {
-      console.error('Settings update error:', error);
-      console.error('Settings update error:', error);
-      return res.status(500).json({
-        error: 'Failed to update settings',
-        details: error instanceof Error ? error.message : String(error),
-        fullError: JSON.stringify(error)
-      });
     }
-  }
 
-  return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ error: 'Method not allowed' });
+  } catch (err) {
+    console.error('Settings API error:', err);
+    return res.status(500).json({
+      error: 'Settings operation failed',
+      details: err instanceof Error ? err.message : String(err)
+    });
+  }
 }

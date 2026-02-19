@@ -22,19 +22,22 @@ export default function MapSettings() {
 
      useEffect(() => {
           fetch('/api/settings', { headers: authHeaders() })
-               .then((r) => r.json())
+               .then((r) => {
+                    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                    return r.json();
+               })
                .then((data) => {
                     const { id, ...rest } = data;
                     const filtered: any = {};
-                    // Map relevant fields from response
                     if (rest.mapTitle !== undefined) filtered.mapTitle = rest.mapTitle;
                     if (rest.mapLat !== undefined) filtered.mapLat = Number(rest.mapLat);
                     if (rest.mapLng !== undefined) filtered.mapLng = Number(rest.mapLng);
                     if (rest.mapZoom !== undefined) filtered.mapZoom = Number(rest.mapZoom);
 
                     setForm({ ...EMPTY, ...filtered });
-                    setLoading(false);
-               });
+               })
+               .catch((err) => console.error('MapSettings fetch error:', err))
+               .finally(() => setLoading(false));
      }, []);
 
      async function handleSave(e: React.FormEvent) {

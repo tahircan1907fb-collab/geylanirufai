@@ -28,17 +28,20 @@ export default function HeroSettings() {
 
      useEffect(() => {
           fetch('/api/settings', { headers: authHeaders() })
-               .then((r) => r.json())
+               .then((r) => {
+                    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                    return r.json();
+               })
                .then((data) => {
                     const { id, ...rest } = data;
-                    // Filter only relevant keys
                     const filtered: any = {};
                     Object.keys(EMPTY).forEach(key => {
                          if (rest[key] !== undefined) filtered[key] = rest[key];
                     });
                     setForm({ ...EMPTY, ...filtered });
-                    setLoading(false);
-               });
+               })
+               .catch((err) => console.error('HeroSettings fetch error:', err))
+               .finally(() => setLoading(false));
      }, []);
 
      async function handleSave(e: React.FormEvent) {

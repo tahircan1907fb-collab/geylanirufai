@@ -98,7 +98,10 @@ export default function ContactSettings() {
 
      useEffect(() => {
           fetch('/api/settings', { headers: authHeaders() })
-               .then((r) => r.json())
+               .then((r) => {
+                    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                    return r.json();
+               })
                .then((data) => {
                     const { id, ...rest } = data;
                     const filtered: any = {};
@@ -108,15 +111,14 @@ export default function ContactSettings() {
 
                     setForm({ ...EMPTY, ...filtered });
 
-                    // Parse DB strings into local time state
                     setTimes({
                          weekday: parseTime(rest.workingHoursWeekday),
                          saturday: parseTime(rest.workingHoursSaturday),
                          sunday: parseTime(rest.workingHoursSunday),
                     });
-
-                    setLoading(false);
-               });
+               })
+               .catch((err) => console.error('ContactSettings fetch error:', err))
+               .finally(() => setLoading(false));
      }, []);
 
      // Sync local time state back to form string format

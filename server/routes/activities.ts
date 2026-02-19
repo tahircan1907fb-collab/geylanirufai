@@ -23,11 +23,41 @@ router.get('/', async (_req: Request, res: Response) => {
 router.post('/', authMiddleware, async (req: Request, res: Response) => {
      try {
           const { title, description, icon, sortOrder } = req.body;
-          const { data, error } = await supabase
+          const parsedSortOrder = Number(sortOrder);
+          const payload = {
+               title,
+               description,
+               icon,
+               sortOrder: Number.isNaN(parsedSortOrder) ? 0 : parsedSortOrder
+          };
+
+          let { data, error } = await supabase
                .from('Activity')
-               .insert({ title, description, icon, sortOrder: sortOrder ?? 0 })
+               .insert(payload)
                .select()
                .single();
+
+          if (error?.code === '23505' && error.message.includes('Activity_pkey')) {
+               const { data: lastRow, error: lastRowError } = await supabase
+                    .from('Activity')
+                    .select('id')
+                    .order('id', { ascending: false })
+                    .limit(1)
+                    .maybeSingle();
+
+               if (lastRowError) return res.status(500).json({ error: lastRowError.message });
+
+               const nextId = (lastRow?.id ?? 0) + 1;
+               const retry = await supabase
+                    .from('Activity')
+                    .insert({ ...payload, id: nextId })
+                    .select()
+                    .single();
+
+               data = retry.data;
+               error = retry.error;
+          }
+
           if (error) return res.status(500).json({ error: error.message });
           res.status(201).json(data);
      } catch (err) {

@@ -22,7 +22,14 @@ export default function AdminLogin() {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password }),
                });
-               const data = await res.json();
+
+               let data: any;
+               try {
+                    data = await res.json();
+               } catch {
+                    setError('Sunucu geçersiz yanıt döndürdü. Lütfen tekrar deneyin.');
+                    return;
+               }
 
                if (!res.ok) {
                     setError(data.error || 'Giriş başarısız');

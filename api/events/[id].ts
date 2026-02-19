@@ -21,48 +21,51 @@ function authMiddleware(req: VercelRequest): boolean {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-     const { method } = req;
-     const { id } = req.query; // Vercel passes dynamic path segment as query param
+     try {
+          const { method } = req;
+          const { id } = req.query;
 
-     if (!id) {
-          return res.status(400).json({ error: 'Missing event ID' });
-     }
-
-     // Admin authentication check for PUT, DELETE
-     if (!authMiddleware(req)) {
-          return res.status(401).json({ error: 'Unauthorized' });
-     }
-
-     if (method === 'PUT') {
-          const { title, date, time, location, category } = req.body;
-
-          // Validate required fields
-          if (!title || !date || !time || !location || !category) {
-               return res.status(400).json({ error: 'Missing required fields' });
+          if (!id) {
+               return res.status(400).json({ error: 'Missing event ID' });
           }
 
-          const { data, error } = await supabase
-               .from('Event')
-               .update({ title, date, time, location, category })
-               .eq('id', id)
-               .select()
-               .single();
+          if (!authMiddleware(req)) {
+               return res.status(401).json({ error: 'Unauthorized' });
+          }
 
-          if (error) return res.status(500).json({ error: error.message });
-          if (!data) return res.status(404).json({ error: 'Event not found' });
+          if (method === 'PUT') {
+               const { title, date, time, location, category } = req.body;
 
-          return res.status(200).json(data);
+               if (!title || !date || !time || !location || !category) {
+                    return res.status(400).json({ error: 'Missing required fields' });
+               }
+
+               const { data, error } = await supabase
+                    .from('Event')
+                    .update({ title, date, time, location, category })
+                    .eq('id', id)
+                    .select()
+                    .single();
+
+               if (error) return res.status(500).json({ error: error.message });
+               if (!data) return res.status(404).json({ error: 'Event not found' });
+
+               return res.status(200).json(data);
+          }
+
+          if (method === 'DELETE') {
+               const { error } = await supabase
+                    .from('Event')
+                    .delete()
+                    .eq('id', id);
+
+               if (error) return res.status(500).json({ error: error.message });
+               return res.status(200).json({ success: true });
+          }
+
+          return res.status(405).json({ error: 'Method not allowed' });
+     } catch (err) {
+          console.error('Events [id] API error:', err);
+          return res.status(500).json({ error: 'Internal server error' });
      }
-
-     if (method === 'DELETE') {
-          const { error } = await supabase
-               .from('Event')
-               .delete()
-               .eq('id', id);
-
-          if (error) return res.status(500).json({ error: error.message });
-          return res.status(200).json({ success: true });
-     }
-
-     return res.status(405).json({ error: 'Method not allowed' });
 }

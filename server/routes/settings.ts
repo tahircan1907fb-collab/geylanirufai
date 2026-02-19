@@ -62,7 +62,6 @@ router.put('/', authMiddleware, async (req: Request, res: Response) => {
           res.json(result);
      } catch (error) {
           console.error('Settings update error:', error);
-          console.error('Settings update error:', error);
           res.status(500).json({
                error: 'Failed to update settings',
                details: error instanceof Error ? error.message : String(error)

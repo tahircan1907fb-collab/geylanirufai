@@ -21,12 +21,12 @@ import {
 
 const NAV_ITEMS = [
      { to: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-     { to: '/admin/activities', label: 'Faaliyetler', icon: Users },
-     { to: '/admin/events', label: 'Etkinlikler', icon: Calendar },
-     { to: '/admin/gallery', label: 'Galeri', icon: Image },
      // Settings
      { to: '/admin/settings/hero', label: 'Ana Sayfa (Hero)', icon: Home },
      { to: '/admin/settings/about', label: 'Hakkımızda', icon: Info },
+     { to: '/admin/activities', label: 'Faaliyetler', icon: Users },
+     { to: '/admin/events', label: 'Etkinlikler', icon: Calendar },
+     { to: '/admin/gallery', label: 'Galeri', icon: Image },
      { to: '/admin/settings/donation', label: 'Bağış Bilgileri', icon: CreditCard },
      { to: '/admin/settings/contact', label: 'İletişim', icon: Phone },
      { to: '/admin/settings/social', label: 'Sosyal Medya', icon: Share2 },

@@ -24,10 +24,21 @@ export default function ActivitiesPage() {
      const headers = { ...authHeaders(), 'Content-Type': 'application/json' };
 
      async function fetchAll() {
-          const res = await fetch('/api/activities', { headers: authHeaders() });
-          const data = await res.json();
-          setItems(data);
-          setLoading(false);
+          try {
+               const res = await fetch('/api/activities', { headers: authHeaders() });
+               if (!res.ok) {
+                    console.error('Activities fetch failed:', res.status);
+                    setItems([]);
+                    return;
+               }
+               const data = await res.json();
+               setItems(Array.isArray(data) ? data : []);
+          } catch (err) {
+               console.error('Activities fetch error:', err);
+               setItems([]);
+          } finally {
+               setLoading(false);
+          }
      }
 
      useEffect(() => { fetchAll(); }, []);
