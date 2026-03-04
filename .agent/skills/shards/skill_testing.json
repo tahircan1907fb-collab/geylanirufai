@@ -1,0 +1,107 @@
+[
+  {
+    "id": "booqable-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/booqable-automation",
+    "name": "booqable-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "bug-hunter",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/bug-hunter",
+    "name": "bug-hunter",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "iqair-airvisual-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/iqair-airvisual-automation",
+    "name": "iqair-airvisual-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "langsmith-fetch",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/langsmith-fetch",
+    "name": "langsmith-fetch",
+    "description_en": "Debug LangChain and LangGraph agents by automatically fetching and analyzing execution traces from LangSmith Studio. First AI observability skill for Claude Code. *By [@OthmanAdi](https://github.com/OthmanAdi)*",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "outlook-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/outlook-automation",
+    "name": "outlook-automation",
+    "description_en": "Automate Outlook: emails, folders, contacts, and calendar integration.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "plugin-dev",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/plugin-dev",
+    "name": "Plugin Development Toolkit",
+    "description_en": "A comprehensive toolkit for developing Claude Code plugins with expert guidance on hooks, MCP integration, plugin structure, and marketplace publishing. The plugin-dev toolkit provides seven specialized skills to help you build high-quality Claude Code plugins: 1. **Hook Development** - Advanced hooks API and event-driven automation",
+    "source": "claude-code"
+  },
+  {
+    "id": "pr-review-toolkit",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/pr-review-toolkit",
+    "name": "PR Review Toolkit",
+    "description_en": "A comprehensive collection of specialized agents for thorough pull request review, covering code comments, test coverage, error handling, type design, code quality, and code simplification. This plugin bundles 6 expert review agents that each focus on a specific aspect of code quality. Use them individually for targeted reviews or together for comprehensive PR analysis. **Focus**: Code comment accuracy and maintainability",
+    "source": "claude-code"
+  },
+  {
+    "id": "systematic-debugging",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/systematic-debugging",
+    "name": "systematic-debugging",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "systematic-debugging",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/systematic-debugging",
+    "name": "systematic-debugging",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "test-app-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/test-app-automation",
+    "name": "test-app-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "test-driven-development",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/test-driven-development",
+    "name": "test-driven-development",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "test-engineer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/test-engineer",
+    "name": "test-engineer",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "testing-patterns",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/testing-patterns",
+    "name": "testing-patterns",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "webapp-testing",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/webapp-testing",
+    "name": "webapp-testing",
+    "description_en": "Tests local web applications using Playwright for verifying frontend functionality, debugging UI behavior, and capturing screenshots.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "webapp-testing",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/webapp-testing",
+    "name": "webapp-testing",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  }
+]

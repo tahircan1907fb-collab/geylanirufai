@@ -1,0 +1,14 @@
+{
+  "source_priority": [
+    "awesome-claude-skills",
+    "claude-code",
+    "superpowers",
+    "eski-skiller"
+  ],
+  "fail_on": {
+    "malformed_rows": true,
+    "declared_total_mismatch": true,
+    "missing_links": true,
+    "source_priority_violation": false
+  }
+}

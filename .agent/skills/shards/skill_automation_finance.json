@@ -1,0 +1,58 @@
+[
+  {
+    "id": "invoice-organizer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/invoice-organizer",
+    "name": "invoice-organizer",
+    "description_en": "Automatically organizes invoices and receipts for tax preparation by reading files, extracting information, and renaming consistently.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "quickbooks-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/quickbooks-automation",
+    "name": "quickbooks-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "stripe-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/stripe-automation",
+    "name": "stripe-automation",
+    "description_en": "Automate Stripe: charges, customers, products, subscriptions, and refunds.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "wave-accounting-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/wave-accounting-automation",
+    "name": "wave-accounting-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "wave_accounting-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/wave_accounting-automation",
+    "name": "wave_accounting-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "xero-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/xero-automation",
+    "name": "xero-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-invoice-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-invoice-automation",
+    "name": "zoho-invoice-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho_invoice-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho_invoice-automation",
+    "name": "zoho_invoice-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  }
+]

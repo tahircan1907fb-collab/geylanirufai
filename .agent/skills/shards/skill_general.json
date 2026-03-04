@@ -1,0 +1,373 @@
+[
+  {
+    "id": "bash-linux",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/bash-linux",
+    "name": "bash-linux",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "behavioral-modes",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/behavioral-modes",
+    "name": "behavioral-modes",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "brainstorming",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/brainstorming",
+    "name": "brainstorming",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "brainstorming",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/brainstorming",
+    "name": "brainstorming",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "clean-code",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/clean-code",
+    "name": "clean-code",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "code-review",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/code-review",
+    "name": "Code Review Plugin",
+    "description_en": "Automated code review for pull requests using multiple specialized agents with confidence-based scoring to filter false positives. The Code Review Plugin automates pull request review by launching multiple agents in parallel to independently audit changes from different perspectives. It uses confidence scoring to filter out false positives, ensuring only high-quality, actionable feedback is posted. Performs automated code review on a pull request using multiple specialized agents.",
+    "source": "claude-code"
+  },
+  {
+    "id": "code-review",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/code-review",
+    "name": "code-review",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "code-review-checklist",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/code-review-checklist",
+    "name": "code-review-checklist",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "connect",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/connect",
+    "name": "connect",
+    "description_en": "Connect Claude to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "content-research-writer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/content-research-writer",
+    "name": "content-research-writer",
+    "description_en": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, and providing section-by-section feedback.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "developer-growth-analysis",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/developer-growth-analysis",
+    "name": "developer-growth-analysis",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "document-skills",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/document-skills",
+    "name": "document-skills",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "documentation-templates",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/documentation-templates",
+    "name": "documentation-templates",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "executing-plans",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/executing-plans",
+    "name": "executing-plans",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "explanatory-output-style",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/explanatory-output-style",
+    "name": "Explanatory Output Style Plugin",
+    "description_en": "This plugin recreates the deprecated Explanatory output style as a SessionStart hook. WARNING: Do not install this plugin unless you are fine with incurring the token",
+    "source": "claude-code"
+  },
+  {
+    "id": "feature-adviser",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/feature-adviser",
+    "name": "feature-adviser",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "file-organizer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/file-organizer",
+    "name": "file-organizer",
+    "description_en": "Intelligently organizes files and folders by understanding context, finding duplicates, and suggesting better organizational structures.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "finishing-a-development-branch",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/finishing-a-development-branch",
+    "name": "finishing-a-development-branch",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "game-development",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/game-development",
+    "name": "game-development",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "geo-fundamentals",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/geo-fundamentals",
+    "name": "geo-fundamentals",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "hookify",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/hookify",
+    "name": "Hookify Plugin",
+    "description_en": "Easily create custom hooks to prevent unwanted behaviors by analyzing conversation patterns or from explicit instructions. The hookify plugin makes it simple to create hooks without editing complex `hooks.json` files. Instead, you create lightweight markdown configuration files that define patterns to watch for and messages to show when those patterns match. **Key features:**",
+    "source": "claude-code"
+  },
+  {
+    "id": "i18n-localization",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/i18n-localization",
+    "name": "i18n-localization",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "image-enhancer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/image-enhancer",
+    "name": "image-enhancer",
+    "description_en": "Improves image and screenshot quality by enhancing resolution, sharpness, and clarity for professional presentations and documentation.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "internal-comms",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/internal-comms",
+    "name": "internal-comms",
+    "description_en": "Helps write internal communications including 3P updates, company newsletters, FAQs, status reports, and project updates using company-specific formats.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "learning-output-style",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/learning-output-style",
+    "name": "Learning Style Plugin",
+    "description_en": "This plugin combines the unshipped Learning output style with explanatory functionality as a SessionStart hook. **Note:** This plugin differs from the original unshipped Learning output style by also incorporating all functionality from the [explanatory-output-style plugin](https://github.com/anthropics/claude-code/tree/main/plugins/explanatory-output-style), providing both interactive learning and educational insights. WARNING: Do not install this plugin unless you are fine with incurring the token cost of this plugin's additional instructions and the interactive nature of learning mode.",
+    "source": "claude-code"
+  },
+  {
+    "id": "lint-and-validate",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/lint-and-validate",
+    "name": "lint-and-validate",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "meeting-insights-analyzer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/meeting-insights-analyzer",
+    "name": "meeting-insights-analyzer",
+    "description_en": "Analyzes meeting transcripts to uncover behavioral patterns including conflict avoidance, speaking ratios, filler words, and leadership style.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "nestjs-expert",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/nestjs-expert",
+    "name": "nestjs-expert",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "nextjs-best-practices",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/nextjs-best-practices",
+    "name": "nextjs-best-practices",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "nodejs-best-practices",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/nodejs-best-practices",
+    "name": "nodejs-best-practices",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "performance-optimizer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/performance-optimizer",
+    "name": "performance-optimizer",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "performance-profiling",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/performance-profiling",
+    "name": "performance-profiling",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "plan-writing",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/plan-writing",
+    "name": "plan-writing",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "powershell-windows",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/powershell-windows",
+    "name": "powershell-windows",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "prisma-expert",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/prisma-expert",
+    "name": "prisma-expert",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "python-patterns",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/python-patterns",
+    "name": "python-patterns",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "raffle-winner-picker",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/raffle-winner-picker",
+    "name": "raffle-winner-picker",
+    "description_en": "Randomly selects winners from lists, spreadsheets, or Google Sheets for giveaways and contests with cryptographically secure randomness.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "receiving-code-review",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/receiving-code-review",
+    "name": "receiving-code-review",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "red-team-tactics",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/red-team-tactics",
+    "name": "red-team-tactics",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "requesting-code-review",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/requesting-code-review",
+    "name": "requesting-code-review",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "skill-creator",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/skill-creator",
+    "name": "skill-creator",
+    "description_en": "Provides guidance for creating effective Claude Skills that extend capabilities with specialized knowledge, workflows, and tool integrations.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "skill-share",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/skill-share",
+    "name": "skill-share",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "slack-gif-creator",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/slack-gif-creator",
+    "name": "slack-gif-creator",
+    "description_en": "Creates animated GIFs optimized for Slack with validators for size constraints and composable animation primitives.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "tailored-resume-generator",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/tailored-resume-generator",
+    "name": "tailored-resume-generator",
+    "description_en": "Analyzes job descriptions and generates tailored resumes that highlight relevant experience, skills, and achievements to maximize interview chances.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "template-skill",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/template-skill",
+    "name": "template-skill",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "theme-factory",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/theme-factory",
+    "name": "theme-factory",
+    "description_en": "Applies professional font and color themes to artifacts including slides, docs, reports, and HTML landing pages with 10 pre-set themes.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "twitter-algorithm-optimizer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/twitter-algorithm-optimizer",
+    "name": "twitter-algorithm-optimizer",
+    "description_en": "Analyze and optimize tweets for maximum reach using Twitter's open-source algorithm insights. Rewrite and edit tweets to improve engagement and visibility.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "typescript-expert",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/typescript-expert",
+    "name": "typescript-expert",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "using-git-worktrees",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/using-git-worktrees",
+    "name": "using-git-worktrees",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "using-superpowers",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/using-superpowers",
+    "name": "using-superpowers",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "verification-before-completion",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/verification-before-completion",
+    "name": "verification-before-completion",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "writing-plans",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/writing-plans",
+    "name": "writing-plans",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "writing-skills",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/writing-skills",
+    "name": "writing-skills",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  }
+]

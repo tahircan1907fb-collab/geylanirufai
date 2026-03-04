@@ -6,6 +6,7 @@ import About from './components/About';
 import Activities from './components/Activities';
 import Events from './components/Events';
 import Gallery from './components/Gallery';
+import Stats from './components/Stats';
 import Donation from './components/Donation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -17,6 +18,7 @@ import DashboardPage from './admin/DashboardPage';
 import ActivitiesPage from './admin/ActivitiesPage';
 import EventsPage from './admin/EventsPage';
 import GalleryPage from './admin/GalleryPage';
+import MessagesPage from './admin/MessagesPage';
 import ProtectedRoute from './admin/components/ProtectedRoute';
 // Settings Sub-pages
 import HeroSettings from './admin/settings/HeroSettings';
@@ -25,6 +27,7 @@ import DonationSettings from './admin/settings/DonationSettings';
 import ContactSettings from './admin/settings/ContactSettings';
 import SocialMediaSettings from './admin/settings/SocialMediaSettings';
 import MapSettings from './admin/settings/MapSettings';
+import SecuritySettings from './admin/settings/SecuritySettings';
 
 function MainSite() {
   return (
@@ -33,6 +36,7 @@ function MainSite() {
       <main>
         <Hero />
         <About />
+        <Stats />
         <Activities />
         <Events />
         <Gallery />
@@ -71,9 +75,9 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="messages" element={<MessagesPage />} />
             <Route path="activities" element={<ActivitiesPage />} />
             <Route path="events" element={<EventsPage />} />
-            <Route path="gallery" element={<GalleryPage />} />
             <Route path="gallery" element={<GalleryPage />} />
             {/* Settings Routes */}
             <Route path="settings/hero" element={<HeroSettings />} />
@@ -82,6 +86,7 @@ function App() {
             <Route path="settings/contact" element={<ContactSettings />} />
             <Route path="settings/social" element={<SocialMediaSettings />} />
             <Route path="settings/map" element={<MapSettings />} />
+            <Route path="settings/security" element={<SecuritySettings />} />
           </Route>
         </Route>
       </Routes>

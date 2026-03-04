@@ -1,0 +1,240 @@
+[
+  {
+    "id": "aeroleads-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/aeroleads-automation",
+    "name": "aeroleads-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "capsule-crm-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/capsule-crm-automation",
+    "name": "capsule-crm-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "capsule_crm-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/capsule_crm-automation",
+    "name": "capsule_crm-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "centralstationcrm-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/centralstationcrm-automation",
+    "name": "centralstationcrm-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "changelog-generator",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/changelog-generator",
+    "name": "changelog-generator",
+    "description_en": "Automatically creates user-facing changelogs from git commits by analyzing history and transforming technical commits into customer-friendly release notes.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "close-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/close-automation",
+    "name": "close-automation",
+    "description_en": "Automate Close CRM: leads, contacts, opportunities, activities, and pipelines.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "customerio-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/customerio-automation",
+    "name": "customerio-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "espocrm-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/espocrm-automation",
+    "name": "espocrm-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "googleads-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/googleads-automation",
+    "name": "googleads-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "helloleads-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/helloleads-automation",
+    "name": "helloleads-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "hubspot-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/hubspot-automation",
+    "name": "hubspot-automation",
+    "description_en": "Automate HubSpot CRM: contacts, deals, companies, tickets, and email engagement.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "lead-research-assistant",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/lead-research-assistant",
+    "name": "lead-research-assistant",
+    "description_en": "Identifies and qualifies high-quality leads by analyzing your product, searching for target companies, and providing actionable outreach strategies.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "leadfeeder-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/leadfeeder-automation",
+    "name": "leadfeeder-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "leadoku-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/leadoku-automation",
+    "name": "leadoku-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "nocrm-io-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/nocrm-io-automation",
+    "name": "nocrm-io-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "pipedrive-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/pipedrive-automation",
+    "name": "pipedrive-automation",
+    "description_en": "Automate Pipedrive: deals, contacts, organizations, activities, and pipelines.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "pipeline-crm-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/pipeline-crm-automation",
+    "name": "pipeline-crm-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "salesforce-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/salesforce-automation",
+    "name": "salesforce-automation",
+    "description_en": "Automate Salesforce: objects, records, SOQL queries, and bulk operations.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "salesforce-marketing-cloud-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/salesforce-marketing-cloud-automation",
+    "name": "salesforce-marketing-cloud-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "salesforce-service-cloud-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/salesforce-service-cloud-automation",
+    "name": "salesforce-service-cloud-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-automation",
+    "name": "zoho-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-bigin-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-bigin-automation",
+    "name": "zoho-bigin-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-books-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-books-automation",
+    "name": "zoho-books-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-crm-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-crm-automation",
+    "name": "zoho-crm-automation",
+    "description_en": "Automate Zoho CRM: leads, contacts, deals, accounts, and modules.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-desk-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-desk-automation",
+    "name": "zoho-desk-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-inventory-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-inventory-automation",
+    "name": "zoho-inventory-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-invoice-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-invoice-automation",
+    "name": "zoho-invoice-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho-mail-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho-mail-automation",
+    "name": "zoho-mail-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho_bigin-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho_bigin-automation",
+    "name": "zoho_bigin-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho_books-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho_books-automation",
+    "name": "zoho_books-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho_desk-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho_desk-automation",
+    "name": "zoho_desk-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho_inventory-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho_inventory-automation",
+    "name": "zoho_inventory-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho_invoice-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho_invoice-automation",
+    "name": "zoho_invoice-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zoho_mail-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zoho_mail-automation",
+    "name": "zoho_mail-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  }
+]

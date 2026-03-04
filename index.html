@@ -61,27 +61,105 @@
      </script>
      <style>
           /* Custom Scrollbar */
-          ::-webkit-scrollbar {
-               width: 10px;
-          }
-
-          ::-webkit-scrollbar-track {
-               background: #FDFBF7;
-          }
-
-          ::-webkit-scrollbar-thumb {
-               background: #D4AF37;
-               border-radius: 5px;
-          }
-
-          ::-webkit-scrollbar-thumb:hover {
-               background: #B59226;
-          }
+          ::-webkit-scrollbar { width: 10px; }
+          ::-webkit-scrollbar-track { background: #FDFBF7; }
+          ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 5px; }
+          ::-webkit-scrollbar-thumb:hover { background: #B59226; }
 
           .islamic-pattern {
                background-color: #FDFBF7;
                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
           }
+
+          /* ── Scroll Reveal Animations ── */
+          .scroll-reveal {
+               opacity: 0; transform: translateY(40px);
+               transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+          }
+          .scroll-reveal-left {
+               opacity: 0; transform: translateX(-50px);
+               transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+          }
+          .scroll-reveal-right {
+               opacity: 0; transform: translateX(50px);
+               transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+          }
+          .scroll-reveal.visible,
+          .scroll-reveal-left.visible,
+          .scroll-reveal-right.visible {
+               opacity: 1; transform: translate(0,0);
+          }
+          .scroll-reveal-delay-1 { transition-delay: 0.1s; }
+          .scroll-reveal-delay-2 { transition-delay: 0.2s; }
+          .scroll-reveal-delay-3 { transition-delay: 0.3s; }
+          .scroll-reveal-delay-4 { transition-delay: 0.4s; }
+          .scroll-reveal-delay-5 { transition-delay: 0.5s; }
+          .scroll-reveal-delay-6 { transition-delay: 0.6s; }
+
+          /* ── Hero Parallax ── */
+          .hero-parallax { will-change: transform; transition: transform 0.1s linear; }
+
+          /* ── Toast Notification ── */
+          .toast-container {
+               position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+               display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+          }
+          .toast {
+               pointer-events: auto; padding: 14px 24px; border-radius: 12px;
+               color: #fff; font-size: 14px; font-weight: 500;
+               box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+               backdrop-filter: blur(12px);
+               animation: toast-in 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+               display: flex; align-items: center; gap: 10px;
+          }
+          .toast.toast-success { background: rgba(6,78,59,0.95); border-left: 4px solid #D4AF37; }
+          .toast.toast-info { background: rgba(15,23,42,0.95); border-left: 4px solid #D4AF37; }
+          .toast.toast-out { animation: toast-out 0.3s ease forwards; }
+          @keyframes toast-in { from { opacity:0; transform:translateX(80px) scale(0.9); } to { opacity:1; transform:translateX(0) scale(1); } }
+          @keyframes toast-out { from { opacity:1; transform:translateX(0); } to { opacity:0; transform:translateX(80px); } }
+
+          /* ── Lightbox ── */
+          .lightbox-overlay {
+               position: fixed; inset: 0; z-index: 9998;
+               background: rgba(0,0,0,0.92); backdrop-filter: blur(8px);
+               display: flex; align-items: center; justify-content: center;
+               opacity: 0; animation: lightbox-in 0.3s ease forwards;
+               cursor: pointer;
+          }
+          .lightbox-overlay img {
+               max-width: 90vw; max-height: 85vh; border-radius: 12px;
+               box-shadow: 0 20px 60px rgba(0,0,0,0.5); cursor: default;
+               animation: lightbox-img-in 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+          }
+          .lightbox-close {
+               position: absolute; top: 20px; right: 20px;
+               width: 44px; height: 44px; border-radius: 50%;
+               background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+               color: #fff; font-size: 24px; cursor: pointer;
+               display: flex; align-items: center; justify-content: center;
+               transition: background 0.2s;
+          }
+          .lightbox-close:hover { background: rgba(212,175,55,0.3); }
+          .lightbox-caption {
+               position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+               color: #fff; font-size: 14px; background: rgba(0,0,0,0.6);
+               padding: 8px 20px; border-radius: 8px;
+          }
+          @keyframes lightbox-in { from { opacity:0; } to { opacity:1; } }
+          @keyframes lightbox-img-in { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
+
+          /* ── Animated Counter ── */
+          .counter-value {
+               font-variant-numeric: tabular-nums;
+               transition: all 0.3s ease;
+          }
+
+          /* ── Hero fade-in-up animation ── */
+          @keyframes fade-in-up {
+               from { opacity: 0; transform: translateY(30px); }
+               to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade-in-up { animation: fade-in-up 1s cubic-bezier(0.16,1,0.3,1) forwards; }
      </style>
 
 

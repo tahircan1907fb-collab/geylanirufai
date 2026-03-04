@@ -1,0 +1,100 @@
+[
+  {
+    "id": "appcircle-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/appcircle-automation",
+    "name": "appcircle-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "bunnycdn-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/bunnycdn-automation",
+    "name": "bunnycdn-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "cdr-platform-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/cdr-platform-automation",
+    "name": "cdr-platform-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "changelog-generator",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/changelog-generator",
+    "name": "changelog-generator",
+    "description_en": "Automatically creates user-facing changelogs from git commits by analyzing history and transforming technical commits into customer-friendly release notes.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "cincopa-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/cincopa-automation",
+    "name": "cincopa-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "circleci-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/circleci-automation",
+    "name": "circleci-automation",
+    "description_en": "Automate CircleCI: pipelines, workflows, jobs, and project configuration.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "deployment-procedures",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/deployment-procedures",
+    "name": "deployment-procedures",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "docker-expert",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/docker-expert",
+    "name": "docker-expert",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "docker-hub-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/docker-hub-automation",
+    "name": "docker-hub-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "docker_hub-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/docker_hub-automation",
+    "name": "docker_hub-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "helcim-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/helcim-automation",
+    "name": "helcim-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "icims-talent-cloud-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/icims-talent-cloud-automation",
+    "name": "icims-talent-cloud-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "pipeline-crm-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/pipeline-crm-automation",
+    "name": "pipeline-crm-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "placid-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/placid-automation",
+    "name": "placid-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  }
+]

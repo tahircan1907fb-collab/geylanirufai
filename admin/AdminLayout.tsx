@@ -17,10 +17,13 @@ import {
      Phone,
      Share2,
      MapPin,
+     Mail,
+     Shield,
 } from 'lucide-react';
 
 const NAV_ITEMS = [
      { to: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+     { to: '/admin/messages', label: 'Mesajlar', icon: Mail },
      // Settings
      { to: '/admin/settings/hero', label: 'Ana Sayfa (Hero)', icon: Home },
      { to: '/admin/settings/about', label: 'Hakkımızda', icon: Info },
@@ -31,6 +34,7 @@ const NAV_ITEMS = [
      { to: '/admin/settings/contact', label: 'İletişim', icon: Phone },
      { to: '/admin/settings/social', label: 'Sosyal Medya', icon: Share2 },
      { to: '/admin/settings/map', label: 'Harita Konumu', icon: MapPin },
+     { to: '/admin/settings/security', label: 'Güvenlik', icon: Shield },
 ];
 
 export default function AdminLayout() {

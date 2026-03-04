@@ -1,0 +1,58 @@
+[
+  {
+    "id": "architecture-guardian",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/architecture-guardian",
+    "name": "architecture-guardian",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "auth0-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/auth0-automation",
+    "name": "auth0-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "connect-apps-plugin",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/connect-apps-plugin",
+    "name": "Connect Apps Plugin",
+    "description_en": "Let Claude perform real actions in 500+ apps. Handles auth and connections using Composio under the hood. ```bash claude --plugin-dir ./connect-apps-plugin",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "onesignal-user-auth-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/onesignal-user-auth-automation",
+    "name": "onesignal-user-auth-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "security-auditor",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/security-auditor",
+    "name": "security-auditor",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "security-guidance",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/security-guidance",
+    "name": "security-guidance",
+    "description_en": "No description found.",
+    "source": "claude-code"
+  },
+  {
+    "id": "securitytrails-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/securitytrails-automation",
+    "name": "securitytrails-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "vulnerability-scanner",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/vulnerability-scanner",
+    "name": "vulnerability-scanner",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  }
+]

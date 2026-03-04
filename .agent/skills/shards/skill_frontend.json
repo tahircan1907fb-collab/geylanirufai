@@ -1,0 +1,177 @@
+[
+  {
+    "id": "app-builder",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/app-builder",
+    "name": "app-builder",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "artifacts-builder",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/artifacts-builder",
+    "name": "artifacts-builder",
+    "description_en": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui).",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "brand-guidelines",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/brand-guidelines",
+    "name": "brand-guidelines",
+    "description_en": "Applies Anthropic's official brand colors and typography to artifacts for consistent visual identity and professional design standards.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "buildkite-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/buildkite-automation",
+    "name": "buildkite-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "builtwith-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/builtwith-automation",
+    "name": "builtwith-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "canvas-design",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/canvas-design",
+    "name": "canvas-design",
+    "description_en": "Creates beautiful visual art in PNG and PDF documents using design philosophy and aesthetic principles for posters, designs, and static pieces.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "database-design",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/database-design",
+    "name": "database-design",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "feature-dev",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/feature-dev",
+    "name": "Feature Development Plugin",
+    "description_en": "A comprehensive, structured workflow for feature development with specialized agents for codebase exploration, architecture design, and quality review. The Feature Development Plugin provides a systematic 7-phase approach to building new features. Instead of jumping straight into code, it guides you through understanding the codebase, asking clarifying questions, designing architecture, and ensuring quality—resulting in better-designed features that integrate seamlessly with your existing code. Building features requires more than just writing code. You need to:",
+    "source": "claude-code"
+  },
+  {
+    "id": "figma-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/figma-automation",
+    "name": "figma-automation",
+    "description_en": "Automate Figma: files, components, comments, projects, and team management.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "frontend-design",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/frontend-design",
+    "name": "Frontend Design Plugin",
+    "description_en": "Generates distinctive, production-grade frontend interfaces that avoid generic AI aesthetics. Claude automatically uses this skill for frontend work. Creates production-ready code with: - Bold aesthetic choices",
+    "source": "claude-code"
+  },
+  {
+    "id": "frontend-design",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/frontend-design",
+    "name": "frontend-design",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "mcp-builder",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/mcp-builder",
+    "name": "mcp-builder",
+    "description_en": "Guides creation of high-quality MCP (Model Context Protocol) servers for integrating external APIs and services with LLMs using Python or TypeScript.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "mcp-builder",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/mcp-builder",
+    "name": "mcp-builder",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "mobile-design",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/mobile-design",
+    "name": "mobile-design",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "netsuite-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/netsuite-automation",
+    "name": "netsuite-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "pr-review-toolkit",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/pr-review-toolkit",
+    "name": "PR Review Toolkit",
+    "description_en": "A comprehensive collection of specialized agents for thorough pull request review, covering code comments, test coverage, error handling, type design, code quality, and code simplification. This plugin bundles 6 expert review agents that each focus on a specific aspect of code quality. Use them individually for targeted reviews or together for comprehensive PR analysis. **Focus**: Code comment accuracy and maintainability",
+    "source": "claude-code"
+  },
+  {
+    "id": "quickbooks-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/quickbooks-automation",
+    "name": "quickbooks-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "react-patterns",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/react-patterns",
+    "name": "react-patterns",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "recruitee-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/recruitee-automation",
+    "name": "recruitee-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "security-guidance",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/security-guidance",
+    "name": "security-guidance",
+    "description_en": "No description found.",
+    "source": "claude-code"
+  },
+  {
+    "id": "smartrecruiters-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/smartrecruiters-automation",
+    "name": "smartrecruiters-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "tailwind-patterns",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/tailwind-patterns",
+    "name": "tailwind-patterns",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "ui-ux-pro-max",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/ui-ux-pro-max",
+    "name": "ui-ux-pro-max",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "webapp-testing",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/webapp-testing",
+    "name": "webapp-testing",
+    "description_en": "Tests local web applications using Playwright for verifying frontend functionality, debugging UI behavior, and capturing screenshots.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "webapp-testing",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/webapp-testing",
+    "name": "webapp-testing",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  }
+]

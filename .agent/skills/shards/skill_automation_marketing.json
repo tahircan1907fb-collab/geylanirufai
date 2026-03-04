@@ -1,0 +1,135 @@
+[
+  {
+    "id": "active-campaign-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/active-campaign-automation",
+    "name": "active-campaign-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "activecampaign-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/activecampaign-automation",
+    "name": "activecampaign-automation",
+    "description_en": "Automate ActiveCampaign: contacts, deals, campaigns, lists, and automations.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "aeroleads-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/aeroleads-automation",
+    "name": "aeroleads-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "benchmark-email-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/benchmark-email-automation",
+    "name": "benchmark-email-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "brevo-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/brevo-automation",
+    "name": "brevo-automation",
+    "description_en": "Automate Brevo: contacts, email campaigns, transactional emails, and lists.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "campaign-cleaner-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/campaign-cleaner-automation",
+    "name": "campaign-cleaner-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "competitive-ads-extractor",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/competitive-ads-extractor",
+    "name": "competitive-ads-extractor",
+    "description_en": "Extracts and analyzes competitors' ads from ad libraries to understand messaging and creative approaches that resonate.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "doppler-marketing-automation-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/doppler-marketing-automation-automation",
+    "name": "doppler-marketing-automation-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "google-search-console-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/google-search-console-automation",
+    "name": "google-search-console-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "googleads-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/googleads-automation",
+    "name": "googleads-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "helloleads-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/helloleads-automation",
+    "name": "helloleads-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "hubspot-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/hubspot-automation",
+    "name": "hubspot-automation",
+    "description_en": "Automate HubSpot CRM: contacts, deals, companies, tickets, and email engagement.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "klaviyo-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/klaviyo-automation",
+    "name": "klaviyo-automation",
+    "description_en": "Automate Klaviyo: profiles, lists, segments, campaigns, and events.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "mailchimp-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/mailchimp-automation",
+    "name": "mailchimp-automation",
+    "description_en": "Automate Mailchimp: audiences, campaigns, templates, segments, and reports.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "metaads-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/metaads-automation",
+    "name": "metaads-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "ravenseotools-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/ravenseotools-automation",
+    "name": "ravenseotools-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "salesforce-marketing-cloud-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/salesforce-marketing-cloud-automation",
+    "name": "salesforce-marketing-cloud-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "sendgrid-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/sendgrid-automation",
+    "name": "sendgrid-automation",
+    "description_en": "Automate SendGrid: emails, templates, contacts, lists, and campaign stats.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "seo-fundamentals",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/seo-fundamentals",
+    "name": "seo-fundamentals",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "amplitude-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/amplitude-automation",
+    "name": "amplitude-automation",
+    "description_en": "Automate Amplitude: events, cohorts, user properties, and analytics queries.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "asin-data-api-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/asin-data-api-automation",
+    "name": "asin-data-api-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "big-data-cloud-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/big-data-cloud-automation",
+    "name": "big-data-cloud-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "college-football-data-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/college-football-data-automation",
+    "name": "college-football-data-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "datadog-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/datadog-automation",
+    "name": "datadog-automation",
+    "description_en": "Automate Datadog: monitors, dashboards, metrics, incidents, and alerts.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "google-analytics-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/google-analytics-automation",
+    "name": "google-analytics-automation",
+    "description_en": "Automate Google Analytics: reports, dimensions, metrics, and property management.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "googlebigquery-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/googlebigquery-automation",
+    "name": "googlebigquery-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "mixpanel-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/mixpanel-automation",
+    "name": "mixpanel-automation",
+    "description_en": "Automate Mixpanel: events, funnels, cohorts, annotations, and JQL queries.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "posthog-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/posthog-automation",
+    "name": "posthog-automation",
+    "description_en": "Automate PostHog: events, persons, feature flags, insights, and annotations.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "rosette-text-analytics-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/rosette-text-analytics-automation",
+    "name": "rosette-text-analytics-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "segment-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/segment-automation",
+    "name": "segment-automation",
+    "description_en": "Automate Segment: sources, destinations, tracking, and warehouse connections.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "simple-analytics-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/simple-analytics-automation",
+    "name": "simple-analytics-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "snowflake-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/snowflake-automation",
+    "name": "snowflake-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "token-metrics-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/token-metrics-automation",
+    "name": "token-metrics-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "twelve-data-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/twelve-data-automation",
+    "name": "twelve-data-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  }
+]

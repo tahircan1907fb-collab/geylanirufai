@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-// Default hero content (used as fallback when API is unavailable)
 const DEFAULT_HERO: HeroData = {
   heroBadge: 'Tasavvuf Geleneğinin İzinde',
   heroTitle1: 'Geylani Rufai',
@@ -29,6 +28,7 @@ interface HeroData {
 
 const Hero: React.FC = () => {
   const [data, setData] = useState<HeroData>(DEFAULT_HERO);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetch('/api/settings')
@@ -49,22 +49,42 @@ const Hero: React.FC = () => {
           heroImage: settings.heroImage || DEFAULT_HERO.heroImage,
         })
       )
-      .catch((error) => {
-        console.error('Hero settings fetch error:', error);
-        // Fallback to defaults is already handled by initial state
+      .catch(() => {
+        // Fallback to defaults
       });
+  }, []);
+
+  /* Parallax effect */
+  useEffect(() => {
+    const handleScroll = () => {
+      if (bgRef.current) {
+        const scrollY = window.scrollY;
+        bgRef.current.style.transform = `translateY(${scrollY * 0.35}px) scale(1.1)`;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Parallax */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={data.heroImage}
-          alt="Manevi Atmosfer"
-          className="w-full h-full object-cover"
-        />
+        <div ref={bgRef} className="hero-parallax w-full h-full" style={{ transform: 'scale(1.1)' }}>
+          <img
+            src={data.heroImage}
+            alt="Manevi Atmosfer"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/90 mix-blend-multiply"></div>
+      </div>
+
+      {/* Floating decorative particles */}
+      <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gold-500/30 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-gold-500/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/3 left-1/5 w-1 h-1 bg-gold-500/25 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       {/* Content */}
@@ -88,13 +108,13 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href={data.heroButtonLink1}
-              className="px-8 py-4 bg-gold-500 text-navy-900 rounded font-bold hover:bg-gold-400 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-gold-500/20"
+              className="px-8 py-4 bg-gold-500 text-navy-900 rounded font-bold hover:bg-gold-400 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-105"
             >
               {data.heroButtonText1} <ArrowRight size={20} />
             </a>
             <a
               href={data.heroButtonLink2}
-              className="px-8 py-4 bg-transparent border border-white text-white rounded font-bold hover:bg-white/10 transition-all duration-300"
+              className="px-8 py-4 bg-transparent border border-white text-white rounded font-bold hover:bg-white/10 transition-all duration-300 hover:scale-105"
             >
               {data.heroButtonText2}
             </a>

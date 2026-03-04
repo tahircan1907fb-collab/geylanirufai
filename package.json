@@ -12,7 +12,11 @@
     "dev:backend": "tsx server/index.ts",
     "build": "vite build",
     "preview": "vite preview",
-    "db:seed": "tsx server/seed.ts"
+    "db:seed": "tsx server/seed.ts",
+    "validate:skills": "python scripts/validate-skill-catalog.py",
+    "validate:skills:report": "python scripts/validate-skill-catalog.py --report docs/skill-catalog-report.md",
+    "fix:skills": "python scripts/fix-skill-catalog.py",
+    "build:skills:shards": "python scripts/build-skill-shards.py"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.97.0",

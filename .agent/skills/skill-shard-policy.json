@@ -1,0 +1,172 @@
+{
+  "use_shards": true,
+  "default_domain": "general",
+  "source_priority": {
+    "awesome-claude-skills": 4,
+    "claude-code": 3,
+    "superpowers": 2,
+    "eski-skiller": 1
+  },
+  "search": {
+    "result_limit": 5,
+    "professional_limit": 8,
+    "fallback_score_threshold": 4.0,
+    "min_results_before_fallback": 3
+  },
+  "automation_trigger_tokens": [
+    "automation",
+    "otomasyon",
+    "entegrasyon",
+    "integration",
+    "workflow",
+    "zapier",
+    "make",
+    "n8n"
+  ],
+  "domains": {
+    "automation": {
+      "keywords": [
+        "automation",
+        "otomasyon",
+        "entegrasyon",
+        "integration",
+        "workflow",
+        "zapier",
+        "make",
+        "n8n",
+        "trigger",
+        "action"
+      ],
+      "id_patterns": ["automation", "workflow", "integration", "connector"],
+      "bonus_ids": ["connect-apps", "composio-sdk", "composio-search-automation"],
+      "related": ["automation_crm", "automation_marketing", "automation_support", "automation_finance", "automation_data", "ai", "backend", "devops"]
+    },
+    "automation_crm": {
+      "keywords": ["crm", "sales", "lead", "pipeline", "customer", "musteri"],
+      "id_patterns": ["crm", "salesforce", "hubspot", "pipedrive", "zoho", "lead", "customer"],
+      "bonus_ids": ["hubspot-automation", "zoho-crm-automation", "salesforce-automation"],
+      "related": ["automation", "backend"]
+    },
+    "automation_marketing": {
+      "keywords": ["marketing", "email", "campaign", "ads", "seo", "social"],
+      "id_patterns": ["mailchimp", "campaign", "sendgrid", "ads", "seo", "social", "klaviyo"],
+      "bonus_ids": ["mailchimp-automation", "google-search-console-automation", "activecampaign-automation"],
+      "related": ["automation", "automation_data"]
+    },
+    "automation_support": {
+      "keywords": ["support", "ticket", "helpdesk", "customer-service", "chat"],
+      "id_patterns": ["zendesk", "freshdesk", "intercom", "helpdesk", "ticket", "support"],
+      "bonus_ids": ["zendesk-automation", "freshdesk-automation", "intercom-automation"],
+      "related": ["automation", "automation_crm"]
+    },
+    "automation_finance": {
+      "keywords": ["finance", "invoice", "billing", "accounting", "payment", "odeme", "fatura"],
+      "id_patterns": ["stripe", "quickbooks", "xero", "invoice", "billing", "payment", "accounting"],
+      "bonus_ids": ["stripe-automation", "quickbooks-automation", "xero-automation"],
+      "related": ["automation", "backend"]
+    },
+    "automation_data": {
+      "keywords": ["analytics", "data", "etl", "warehouse", "bi", "reporting", "metrics"],
+      "id_patterns": ["bigquery", "snowflake", "datadog", "mixpanel", "analytics", "metabase", "tableau"],
+      "bonus_ids": ["mixpanel-automation", "posthog-automation", "google-analytics-automation"],
+      "related": ["automation", "backend", "devops"]
+    },
+    "frontend": {
+      "keywords": [
+        "frontend",
+        "ui",
+        "ux",
+        "react",
+        "css",
+        "tailwind",
+        "figma",
+        "component",
+        "design",
+        "webapp"
+      ],
+      "id_patterns": ["frontend", "ui", "tailwind", "webapp"],
+      "bonus_ids": ["frontend-design", "webapp-testing", "tailwind-patterns"],
+      "related": ["testing"]
+    },
+    "backend": {
+      "keywords": [
+        "backend",
+        "api",
+        "server",
+        "express",
+        "auth",
+        "jwt",
+        "database",
+        "query",
+        "orm"
+      ],
+      "id_patterns": ["api", "backend", "database", "auth"],
+      "bonus_ids": ["api-patterns", "database-design", "architecture"],
+      "related": ["security", "testing"]
+    },
+    "devops": {
+      "keywords": [
+        "devops",
+        "deploy",
+        "deployment",
+        "docker",
+        "kubernetes",
+        "ci",
+        "cd",
+        "pipeline",
+        "release"
+      ],
+      "id_patterns": ["deploy", "docker", "kubernetes", "ci", "cd"],
+      "bonus_ids": ["docker-expert", "deployment-procedures"],
+      "related": ["backend", "security"]
+    },
+    "security": {
+      "keywords": [
+        "security",
+        "guvenlik",
+        "guvenli",
+        "vulnerability",
+        "auth",
+        "permission",
+        "jwt",
+        "pentest"
+      ],
+      "id_patterns": ["security", "auth", "permission", "vulnerability"],
+      "bonus_ids": ["security-guidance", "architecture-guardian"],
+      "related": ["backend", "devops"]
+    },
+    "testing": {
+      "keywords": [
+        "test",
+        "testing",
+        "e2e",
+        "unit",
+        "integration",
+        "debug",
+        "qa"
+      ],
+      "id_patterns": ["test", "debug", "qa"],
+      "bonus_ids": ["webapp-testing", "systematic-debugging", "bug-hunter"],
+      "related": ["frontend", "backend"]
+    },
+    "ai": {
+      "keywords": [
+        "ai",
+        "llm",
+        "agent",
+        "prompt",
+        "mcp",
+        "model"
+      ],
+      "id_patterns": ["agent", "mcp", "prompt", "model"],
+      "bonus_ids": ["mcp-builder", "agent-sdk-dev", "feature-dev"],
+      "related": ["backend", "automation"]
+    },
+    "general": {
+      "keywords": [],
+      "id_patterns": [],
+      "bonus_ids": [],
+      "related": []
+    }
+  }
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "agent-mail-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/agent-mail-automation",
+    "name": "agent-mail-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "agent-sdk-dev",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/agent-sdk-dev",
+    "name": "Agent SDK Development Plugin",
+    "description_en": "A comprehensive plugin for creating and verifying Claude Agent SDK applications in Python and TypeScript. The Agent SDK Development Plugin streamlines the entire lifecycle of building Agent SDK applications, from initial scaffolding to verification against best practices. It helps you quickly start new projects with the latest SDK versions and ensures your applications follow official documentation patterns. Interactive command that guides you through creating a new Claude Agent SDK application.",
+    "source": "claude-code"
+  },
+  {
+    "id": "agentql-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/agentql-automation",
+    "name": "agentql-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "agenty-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/agenty-automation",
+    "name": "agenty-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "ai-ml-api-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/ai-ml-api-automation",
+    "name": "ai-ml-api-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "all-images-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/all-images-ai-automation",
+    "name": "all-images-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "alttext-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/alttext-ai-automation",
+    "name": "alttext-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "apipie-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/apipie-ai-automation",
+    "name": "apipie-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "artifacts-builder",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/artifacts-builder",
+    "name": "artifacts-builder",
+    "description_en": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui).",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "astica-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/astica-ai-automation",
+    "name": "astica-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "claid-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/claid-ai-automation",
+    "name": "claid-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "claude-opus-4-5-migration",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/claude-opus-4-5-migration",
+    "name": "Claude Opus 4.5 Migration Plugin",
+    "description_en": "Migrate your code and prompts from Sonnet 4.x and Opus 4.1 to Opus 4.5. This skill updates your code and prompts to be compatible with Opus 4.5. It automates the migration process, handling model strings, beta headers, and other configuration details. If you run into any issues with Opus 4.5 after migration, you can continue using this skill to adjust your prompts. ```",
+    "source": "claude-code"
+  },
+  {
+    "id": "convolo-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/convolo-ai-automation",
+    "name": "convolo-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "dispatching-parallel-agents",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/dispatching-parallel-agents",
+    "name": "dispatching-parallel-agents",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "docsbot-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/docsbot-ai-automation",
+    "name": "docsbot-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "domain-name-brainstormer",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/domain-name-brainstormer",
+    "name": "domain-name-brainstormer",
+    "description_en": "Generates creative domain name ideas and checks availability across multiple TLDs including .com, .io, .dev, and .ai extensions.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "extracta-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/extracta-ai-automation",
+    "name": "extracta-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "feature-dev",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/feature-dev",
+    "name": "Feature Development Plugin",
+    "description_en": "A comprehensive, structured workflow for feature development with specialized agents for codebase exploration, architecture design, and quality review. The Feature Development Plugin provides a systematic 7-phase approach to building new features. Instead of jumping straight into code, it guides you through understanding the codebase, asking clarifying questions, designing architecture, and ensuring quality—resulting in better-designed features that integrate seamlessly with your existing code. Building features requires more than just writing code. You need to:",
+    "source": "claude-code"
+  },
+  {
+    "id": "frontend-design",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/frontend-design",
+    "name": "Frontend Design Plugin",
+    "description_en": "Generates distinctive, production-grade frontend interfaces that avoid generic AI aesthetics. Claude automatically uses this skill for frontend work. Creates production-ready code with: - Bold aesthetic choices",
+    "source": "claude-code"
+  },
+  {
+    "id": "gan-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/gan-ai-automation",
+    "name": "gan-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "insighto-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/insighto-ai-automation",
+    "name": "insighto-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "kontent-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/kontent-ai-automation",
+    "name": "kontent-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "langsmith-fetch",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/langsmith-fetch",
+    "name": "langsmith-fetch",
+    "description_en": "Debug LangChain and LangGraph agents by automatically fetching and analyzing execution traces from LangSmith Studio. First AI observability skill for Claude Code. *By [@OthmanAdi](https://github.com/OthmanAdi)*",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "mcp-builder",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/mcp-builder",
+    "name": "mcp-builder",
+    "description_en": "Guides creation of high-quality MCP (Model Context Protocol) servers for integrating external APIs and services with LLMs using Python or TypeScript.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "mcp-builder",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/mcp-builder",
+    "name": "mcp-builder",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "mistral-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/mistral-ai-automation",
+    "name": "mistral-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "mistral_ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/mistral_ai-automation",
+    "name": "mistral_ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "modelry-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/modelry-automation",
+    "name": "modelry-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "parallel-agents",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/parallel-agents",
+    "name": "parallel-agents",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "plugin-dev",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/plugin-dev",
+    "name": "Plugin Development Toolkit",
+    "description_en": "A comprehensive toolkit for developing Claude Code plugins with expert guidance on hooks, MCP integration, plugin structure, and marketplace publishing. The plugin-dev toolkit provides seven specialized skills to help you build high-quality Claude Code plugins: 1. **Hook Development** - Advanced hooks API and event-driven automation",
+    "source": "claude-code"
+  },
+  {
+    "id": "prompt-enchaner",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/eski-skiller/prompt-enchaner",
+    "name": "prompt-enchaner",
+    "description_en": "No description found.",
+    "source": "eski-skiller"
+  },
+  {
+    "id": "ralph-wiggum",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/claude-code/plugins/ralph-wiggum",
+    "name": "Ralph Wiggum Plugin",
+    "description_en": "Implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code. Ralph is a development methodology based on continuous AI agent loops. As Geoffrey Huntley describes it: **\"Ralph is a Bash loop\"** - a simple `while true` that repeatedly feeds an AI agent a prompt file, allowing it to iteratively improve its work until completion. The technique is named after Ralph Wiggum from The Simpsons, embodying the philosophy of persistent iteration despite setbacks.",
+    "source": "claude-code"
+  },
+  {
+    "id": "rev-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/rev-ai-automation",
+    "name": "rev-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "scrapegraph-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/scrapegraph-ai-automation",
+    "name": "scrapegraph-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "sendbird-ai-chabot-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/sendbird-ai-chabot-automation",
+    "name": "sendbird-ai-chabot-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "subagent-driven-development",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/superpowers/skills/subagent-driven-development",
+    "name": "subagent-driven-development",
+    "description_en": "No description found.",
+    "source": "superpowers"
+  },
+  {
+    "id": "synthflow-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/synthflow-ai-automation",
+    "name": "synthflow-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "webscraping-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/webscraping-ai-automation",
+    "name": "webscraping-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "winston-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/winston-ai-automation",
+    "name": "winston-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "wit-ai-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/wit-ai-automation",
+    "name": "wit-ai-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  }
+]

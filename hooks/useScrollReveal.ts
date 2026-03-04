@@ -1,31 +1,40 @@
 import { useEffect, useRef } from 'react';
 
+const OBSERVER_OPTIONS: IntersectionObserverInit = {
+     threshold: 0.15,
+     rootMargin: '0px 0px -40px 0px',
+};
+
 /**
- * Custom hook that reveals elements when they enter the viewport.
- * Uses IntersectionObserver for performant scroll-based animations.
+ * Activates scroll-reveal animations on elements within the ref container.
+ * Elements with `.scroll-reveal`, `.scroll-reveal-left`, or `.scroll-reveal-right`
+ * classes will be observed and get `.visible` added when they enter the viewport.
  */
-export function useScrollReveal<T extends HTMLElement>(
-     threshold = 0.15
-) {
+export function useScrollReveal<T extends HTMLElement = HTMLDivElement>() {
      const ref = useRef<T>(null);
 
      useEffect(() => {
-          const element = ref.current;
-          if (!element) return;
+          const container = ref.current;
+          if (!container) return;
 
-          const observer = new IntersectionObserver(
-               ([entry]) => {
+          const observer = new IntersectionObserver((entries) => {
+               entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                         element.classList.add('revealed');
-                         observer.unobserve(element);
+                         entry.target.classList.add('visible');
+                         observer.unobserve(entry.target);
                     }
-               },
-               { threshold }
-          );
+               });
+          }, OBSERVER_OPTIONS);
 
-          observer.observe(element);
+          const targets = container.querySelectorAll(
+               '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right'
+          );
+          targets.forEach((el) => observer.observe(el));
+
           return () => observer.disconnect();
-     }, [threshold]);
+     }, []);
 
      return ref;
 }
+
+export default useScrollReveal;

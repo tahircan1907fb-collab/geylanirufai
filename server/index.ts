@@ -9,6 +9,7 @@ import activitiesRoutes from './routes/activities';
 import eventsRoutes from './routes/events';
 import galleryRoutes from './routes/gallery';
 import settingsRoutes from './routes/settings';
+import contactRoutes from './routes/contact';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -37,6 +38,7 @@ app.use('/api/activities', activitiesRoutes);
 app.use('/api/events', eventsRoutes);
 app.use('/api/gallery', galleryRoutes);
 app.use('/api/settings', settingsRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Health check
 app.get('/api/health', (_req, res) => {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { authHeaders } from './components/ProtectedRoute';
-import { Plus, Edit2, Trash2, X, Save } from 'lucide-react';
+import { Plus, Edit2, Trash2, X, Save, Search } from 'lucide-react';
+import { adminToast } from '../lib/adminToast';
 
 interface Activity {
      id: number;
@@ -20,6 +21,8 @@ export default function ActivitiesPage() {
      const [modalOpen, setModalOpen] = useState(false);
      const [editing, setEditing] = useState<Activity | null>(null);
      const [form, setForm] = useState(EMPTY);
+     const [saving, setSaving] = useState(false);
+     const [search, setSearch] = useState('');
 
      const headers = { ...authHeaders(), 'Content-Type': 'application/json' };
 
@@ -57,19 +60,45 @@ export default function ActivitiesPage() {
 
      async function handleSave(e: React.FormEvent) {
           e.preventDefault();
-          if (editing) {
-               await fetch(`/api/activities/${editing.id}`, { method: 'PUT', headers, body: JSON.stringify(form) });
-          } else {
-               await fetch('/api/activities', { method: 'POST', headers, body: JSON.stringify(form) });
+          if (!form.title.trim() || !form.description.trim() || !form.icon.trim()) {
+               adminToast('Lütfen zorunlu alanları doldurunuz.', 'warning');
+               return;
           }
-          setModalOpen(false);
-          fetchAll();
+
+          setSaving(true);
+          try {
+               const endpoint = editing ? `/api/activities/${editing.id}` : '/api/activities';
+               const method = editing ? 'PUT' : 'POST';
+               const res = await fetch(endpoint, { method, headers, body: JSON.stringify(form) });
+               if (!res.ok) {
+                    const data = await res.json().catch(() => ({}));
+                    throw new Error(data.error || 'İşlem başarısız');
+               }
+               adminToast(editing ? 'Faaliyet güncellendi' : 'Yeni faaliyet eklendi', 'success');
+               setModalOpen(false);
+               fetchAll();
+          } catch (error) {
+               console.error('Activities save error:', error);
+               adminToast('Kayıt işlemi sırasında bir hata oluştu', 'error');
+          } finally {
+               setSaving(false);
+          }
      }
 
      async function handleDelete(id: number) {
           if (!confirm('Bu faaliyeti silmek istediğinize emin misiniz?')) return;
-          await fetch(`/api/activities/${id}`, { method: 'DELETE', headers });
-          fetchAll();
+          try {
+               const res = await fetch(`/api/activities/${id}`, { method: 'DELETE', headers });
+               if (!res.ok) {
+                    const data = await res.json().catch(() => ({}));
+                    throw new Error(data.error || 'Silme işlemi başarısız');
+               }
+               adminToast('Faaliyet silindi', 'success');
+               fetchAll();
+          } catch (error) {
+               console.error('Activities delete error:', error);
+               adminToast('Silme işlemi sırasında bir hata oluştu', 'error');
+          }
      }
 
      return (
@@ -82,6 +111,17 @@ export default function ActivitiesPage() {
                     >
                          <Plus className="w-4 h-4" /> Ekle
                     </button>
+               </div>
+
+               {/* Search */}
+               <div className="mb-4 relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                    <input
+                         value={search}
+                         onChange={(e) => setSearch(e.target.value)}
+                         placeholder="Faaliyet ara..."
+                         className="w-full pl-10 pr-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none focus:border-amber-500 transition"
+                    />
                </div>
 
                {loading ? (
@@ -103,22 +143,24 @@ export default function ActivitiesPage() {
                                    </tr>
                               </thead>
                               <tbody>
-                                   {items.map((item) => (
-                                        <tr key={item.id} className="border-b border-slate-700/50 hover:bg-slate-700/20 transition">
-                                             <td className="px-4 py-3 text-slate-300 text-sm">{item.sortOrder}</td>
-                                             <td className="px-4 py-3 text-amber-400 text-sm font-mono">{item.icon}</td>
-                                             <td className="px-4 py-3 text-white text-sm font-medium">{item.title}</td>
-                                             <td className="px-4 py-3 text-slate-400 text-sm hidden sm:table-cell truncate max-w-[200px]">{item.description}</td>
-                                             <td className="px-4 py-3 text-right">
-                                                  <button onClick={() => openEdit(item)} className="text-slate-400 hover:text-amber-400 mr-2 transition">
-                                                       <Edit2 className="w-4 h-4" />
-                                                  </button>
-                                                  <button onClick={() => handleDelete(item.id)} className="text-slate-400 hover:text-red-400 transition">
-                                                       <Trash2 className="w-4 h-4" />
-                                                  </button>
-                                             </td>
-                                        </tr>
-                                   ))}
+                                   {items
+                                        .filter((item) => !search || item.title.toLowerCase().includes(search.toLowerCase()) || item.description.toLowerCase().includes(search.toLowerCase()))
+                                        .map((item) => (
+                                             <tr key={item.id} className="border-b border-slate-700/50 hover:bg-slate-700/20 transition">
+                                                  <td className="px-4 py-3 text-slate-300 text-sm">{item.sortOrder}</td>
+                                                  <td className="px-4 py-3 text-amber-400 text-sm font-mono">{item.icon}</td>
+                                                  <td className="px-4 py-3 text-white text-sm font-medium">{item.title}</td>
+                                                  <td className="px-4 py-3 text-slate-400 text-sm hidden sm:table-cell truncate max-w-[200px]">{item.description}</td>
+                                                  <td className="px-4 py-3 text-right">
+                                                       <button onClick={() => openEdit(item)} className="text-slate-400 hover:text-amber-400 mr-2 transition">
+                                                            <Edit2 className="w-4 h-4" />
+                                                       </button>
+                                                       <button onClick={() => handleDelete(item.id)} className="text-slate-400 hover:text-red-400 transition">
+                                                            <Trash2 className="w-4 h-4" />
+                                                       </button>
+                                                  </td>
+                                             </tr>
+                                        ))}
                               </tbody>
                          </table>
                     </div>
@@ -188,14 +230,16 @@ export default function ActivitiesPage() {
                                         type="button"
                                         onClick={() => setModalOpen(false)}
                                         className="px-4 py-2 text-sm text-slate-400 hover:text-white transition"
+                                        disabled={saving}
                                    >
                                         İptal
                                    </button>
                                    <button
                                         type="submit"
-                                        className="flex items-center gap-2 px-4 py-2 bg-amber-500 text-white text-sm font-semibold rounded-lg hover:bg-amber-600 transition"
+                                        disabled={saving}
+                                        className="flex items-center gap-2 px-4 py-2 bg-amber-500 text-white text-sm font-semibold rounded-lg hover:bg-amber-600 transition disabled:opacity-60 disabled:cursor-not-allowed"
                                    >
-                                        <Save className="w-4 h-4" /> Kaydet
+                                        <Save className="w-4 h-4" /> {saving ? 'Kaydediliyor...' : 'Kaydet'}
                                    </button>
                               </div>
                          </form>

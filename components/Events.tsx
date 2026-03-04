@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import SectionTitle from './SectionTitle';
 import { Calendar, MapPin, Clock, ArrowUp, ArrowDown } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface Event {
   id: number;
@@ -15,15 +16,17 @@ const Events: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
   const [startIndex, setStartIndex] = useState(0);
-  const [incomingStartIndex, setIncomingStartIndex] = useState(0);
+  const [transitionDirection, setTransitionDirection] = useState<'up' | 'down' | null>(null);
+  const sectionRef = useScrollReveal();
   const [isAnimating, setIsAnimating] = useState(false);
   const [slideOffset, setSlideOffset] = useState(0);
+  const [cardHeight, setCardHeight] = useState(170);
 
   const animationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const firstCardRef = useRef<HTMLDivElement | null>(null);
 
   const VISIBLE_COUNT = 3;
-  const ANIMATION_DURATION = 620;
+  const ANIMATION_DURATION = 520;
   const CARD_GAP = 16;
 
   // Helper to parse date string (YYYY-MM-DD or legacy text)
@@ -95,13 +98,13 @@ const Events: React.FC = () => {
   useEffect(() => {
     if (events.length === 0) {
       setStartIndex(0);
-      setIncomingStartIndex(0);
+      setTransitionDirection(null);
       setIsAnimating(false);
+      setSlideOffset(0);
       return;
     }
 
     setStartIndex((prev) => wrapIndex(prev, events.length));
-    setIncomingStartIndex((prev) => wrapIndex(prev, events.length));
   }, [events.length]);
 
   useEffect(() => {
@@ -112,6 +115,22 @@ const Events: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const measureCardHeight = () => {
+      const height = firstCardRef.current?.getBoundingClientRect().height;
+      if (height && height > 0) {
+        setCardHeight(height);
+      }
+    };
+
+    measureCardHeight();
+    window.addEventListener('resize', measureCardHeight);
+
+    return () => {
+      window.removeEventListener('resize', measureCardHeight);
+    };
+  }, [events.length, startIndex, isAnimating]);
+
   const startSlide = (nextDirection: 'up' | 'down') => {
     if (events.length <= 1 || isAnimating) return;
 
@@ -120,32 +139,42 @@ const Events: React.FC = () => {
         ? wrapIndex(startIndex + 1, events.length)
         : wrapIndex(startIndex - 1, events.length);
 
-    setIncomingStartIndex(nextIndex);
-    setIsAnimating(true);
     const firstCardHeight = firstCardRef.current?.getBoundingClientRect().height ?? 170;
     const distance = firstCardHeight + CARD_GAP;
-    setSlideOffset(0);
+
+    setTransitionDirection(nextDirection);
+    setIsAnimating(true);
+    setSlideOffset(nextDirection === 'up' ? -distance : 0);
 
     if (animationTimeoutRef.current) {
       clearTimeout(animationTimeoutRef.current);
     }
 
     requestAnimationFrame(() => {
-      setSlideOffset(nextDirection === 'down' ? -distance : distance);
+      setSlideOffset(nextDirection === 'down' ? -distance : 0);
     });
 
     animationTimeoutRef.current = setTimeout(() => {
       setStartIndex(nextIndex);
+      setTransitionDirection(null);
       setIsAnimating(false);
       setSlideOffset(0);
     }, ANIMATION_DURATION);
   };
 
   const visibleEvents = getVisibleEvents(startIndex);
-  const incomingEvents = getVisibleEvents(incomingStartIndex);
+  const visibleCount = Math.min(VISIBLE_COUNT, events.length);
+  const viewportHeight = cardHeight * visibleCount + CARD_GAP * Math.max(visibleCount - 1, 0);
+  const previousEvent = events[wrapIndex(startIndex - 1, events.length)];
+  const nextEvent = events[wrapIndex(startIndex + visibleCount, events.length)];
+  const trackEvents = isAnimating
+    ? transitionDirection === 'up'
+      ? [previousEvent, ...visibleEvents]
+      : [...visibleEvents, nextEvent]
+    : visibleEvents;
 
   return (
-    <section id="events" className="py-20 bg-emerald-900 text-white relative overflow-hidden">
+    <section id="events" className="py-20 bg-emerald-900 text-white relative overflow-hidden" ref={sectionRef}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #D4AF37 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
 
@@ -178,66 +207,26 @@ const Events: React.FC = () => {
               <div className="text-center py-12 text-gray-400">Şu an planlanmış etkinlik bulunmamaktadır.</div>
             ) : (
               <div className="relative sm:pr-20">
-                <div className="relative overflow-hidden">
-                  {isAnimating && (
-                    <div className="absolute inset-0 space-y-4 z-0 pointer-events-none">
-                      {incomingEvents.map((event, index) => {
-                        const { day, month, year } = formatEventDate(event.date);
-
-                        return (
-                          <div
-                            key={`incoming-${event.id}-${index}`}
-                            className="bg-white text-navy-900 p-6 rounded-xl flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-lg border-l-4 border-gold-500 min-h-[170px]"
-                          >
-                            <div className="bg-emerald-100 text-emerald-900 p-3 rounded-lg text-center min-w-[90px] self-stretch flex flex-col justify-center">
-                              <span className="block text-2xl font-bold font-heading leading-tight">{day}</span>
-                              <span className="block text-xs font-semibold uppercase tracking-wider mt-1">{month}</span>
-                              {year && <span className="block text-xs text-emerald-700/70 font-medium mt-0.5">{year}</span>}
-                            </div>
-
-                            <div className="flex-1 w-full">
-                              <div className="flex justify-between items-start mb-2 gap-3">
-                                <h4 className="text-lg font-bold text-navy-900 leading-tight">{event.title}</h4>
-                                <span className="text-xs font-medium px-2 py-1 bg-emerald-100 text-emerald-800 rounded-full whitespace-nowrap">
-                                  {event.category}
-                                </span>
-                              </div>
-
-                              <div className="flex flex-col gap-2 text-sm text-gray-600 mt-3">
-                                <div className="flex items-center gap-2">
-                                  <Clock size={15} className="text-gold-600 shrink-0" />
-                                  <span>{event.time}</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                  <MapPin size={15} className="text-gold-600 shrink-0" />
-                                  <span className="truncate">{event.location}</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  )}
-
+                <div className="relative overflow-hidden" style={{ height: `${viewportHeight}px` }}>
                   <div
-                    className="space-y-4 relative z-10"
+                    className="space-y-4 relative z-10 will-change-transform"
                     style={
                       isAnimating
                         ? {
-                            transform: `translateY(${slideOffset}px)`,
-                            transition: `transform ${ANIMATION_DURATION}ms cubic-bezier(0.22, 1, 0.36, 1)`
-                          }
+                          transform: `translateY(${slideOffset}px)`,
+                          transition: `transform ${ANIMATION_DURATION}ms cubic-bezier(0.25, 0.8, 0.25, 1)`
+                        }
                         : undefined
                     }
                   >
-                    {visibleEvents.map((event, index) => {
+                    {trackEvents.map((event, index) => {
                       const { day, month, year } = formatEventDate(event.date);
+                      const visibleIndex = isAnimating && transitionDirection === 'up' ? index - 1 : index;
 
                       return (
                         <div
-                          key={`visible-${event.id}-${index}`}
-                          ref={index === 0 ? firstCardRef : null}
+                          key={`track-${event.id}-${index}`}
+                          ref={visibleIndex === 0 ? firstCardRef : null}
                           className="bg-white text-navy-900 p-6 rounded-xl flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-gold-500 min-h-[170px]"
                         >
                           <div className="bg-emerald-100 text-emerald-900 p-3 rounded-lg text-center min-w-[90px] self-stretch flex flex-col justify-center">

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "freshdesk-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/freshdesk-automation",
+    "name": "freshdesk-automation",
+    "description_en": "Automate Freshdesk: tickets, contacts, agents, groups, and canned responses.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "helpdesk-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/helpdesk-automation",
+    "name": "helpdesk-automation",
+    "description_en": "Automate Help Scout: conversations, customers, mailboxes, and tags.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "intercom-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/intercom-automation",
+    "name": "intercom-automation",
+    "description_en": "Automate Intercom: conversations, contacts, companies, tickets, and articles.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "many-chat-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/many-chat-automation",
+    "name": "many-chat-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "many_chat-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/many_chat-automation",
+    "name": "many_chat-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "supportbee-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/supportbee-automation",
+    "name": "supportbee-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "supportivekoala-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/supportivekoala-automation",
+    "name": "supportivekoala-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "ticketmaster-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/ticketmaster-automation",
+    "name": "ticketmaster-automation",
+    "description_en": "No description found.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "video-downloader",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/video-downloader",
+    "name": "video-downloader",
+    "description_en": "Downloads videos from YouTube and other platforms for offline viewing, editing, or archival with support for various formats and quality options.",
+    "source": "awesome-claude-skills"
+  },
+  {
+    "id": "zendesk-automation",
+    "path": "c:/Users/tahir/OneDrive/Masaüstü/program/geylanirufai/.agent/skills/external/awesome-claude-skills/zendesk-automation",
+    "name": "zendesk-automation",
+    "description_en": "Automate Zendesk: tickets, users, organizations, search, and macros.",
+    "source": "awesome-claude-skills"
+  }
+]

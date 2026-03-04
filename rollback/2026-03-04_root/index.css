@@ -1,0 +1,4 @@
+/* CSS Reset handled by CDN Tailwind */
+html {
+  scroll-behavior: smooth;
+}
